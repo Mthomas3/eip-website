@@ -3,6 +3,10 @@
 @import 'skills.scss';
 @import 'footer.scss';
 
+html {
+  height: 100%;
+}
+
 body{
   height: 100%;
   width:100%;
@@ -20,7 +24,6 @@ body{
 section {
   height: 100vh;
   width: 100%;
-  display: table;
 }
 
 h1, p{
@@ -42,20 +45,19 @@ h1, p{
 .footer{
   @include setFooter();
 }
-
 .scroll-down{
-  height: 0;
-  width: 0;
 }
 
 .scroll-down a {
-  padding-top: 70px;
+  position: absolute;
+  left: 50%;
+  bottom: 10%;
+  padding: 40px 20px;
+  background-color: red;
 }
 
 .scroll-down a span{
   position: absolute;
-  left: 50%;
-  bottom: 10%;
   width: 24px;
   height: 24px;
   margin-left: -12px;
@@ -95,3 +97,11 @@ h1, p{
   }
 }
 
+.menu{
+  float: right;
+  margin-right: 10%;
+  height: 100px;
+  width: 100px;
+
+  background-color: red;
+}
