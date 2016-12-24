@@ -17,9 +17,21 @@
             <a href="#" class="scroll-down"><span></span></a>
         </div>
         <div class="menu">
-            <!-- set menu -->
+            <button id="trigger-overlay" type="button">
+                <div class="menuicon">
+            </button>
         </div>
-
+        <div class="overlay overlay-door">
+            <button type="button" class="overlay-close icon icon_menu">Close</button>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Content</a></li>
+                    <li><a href="#">Skills</a></li>
+                    <li><a href="#">Footer</a></li>
+                </ul>
+            </nav>
+        </div>
     </div>
 </section>
 <section class="content">
@@ -38,6 +50,9 @@
         <div style="text-align: center;"><p> ---------- FOOTER ---------- </p></div>
     </div>
 </section>
+<script src="js/modernizr.custom.js"></script>
+<script src="js/classie.js"></script>
+<script src="js/showButtonHome.js"></script>
 <!-- BOOTSTRAP -->
 <script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/js/bootstrap.min.js"

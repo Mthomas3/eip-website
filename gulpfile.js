@@ -7,6 +7,12 @@ const plumber = require('gulp-plumber')
 const babel = require('gulp-babel')
 const copy = require('gulp-copy')
 
+gulp.task('copy-script', function () {
+
+    return (gulp.src(['app/js/classie.js', 'app/js/showButtonHome.js', 'app/js/modernizr.custom.js']).pipe(gulp.dest('dist/js/')))
+
+})
+
 gulp.task('copy', function () {
     return (
         gulp.src('app/index.html').pipe(gulp.dest('dist/')))
@@ -24,7 +30,7 @@ gulp.task('styles', function () {
 
 gulp.task('babel', function () {
 
-    gulp.src('app/js/*.js')
+    gulp.src('app/js/main.js')
         .pipe(plumber())
         .pipe(babel({
             presets: ['es2015']
@@ -47,7 +53,7 @@ gulp.task('images', function () {
 })
 
 
-gulp.task('serve', ['copy', 'styles', 'clean', 'images', 'babel'], function () {
+gulp.task('serve', ['copy', 'copy-script', 'styles', 'clean', 'images', 'babel'], function () {
 
 
     browserSync.init({
@@ -57,6 +63,7 @@ gulp.task('serve', ['copy', 'styles', 'clean', 'images', 'babel'], function () {
 
     gulp.watch('app/styles/*.scss', ['styles'])
     gulp.watch('app/*.html', ['copy', browserSync.reload])
+    gulp.watch('app/*.js', ['copy-script'], browserSync.reload)
     gulp.watch('app/js/*.js', ['babel', browserSync.reload])
 })
 
