@@ -17,24 +17,28 @@
             <a href="#" class="scroll-down"><span></span></a>
         </div>
         <div class="menu">
-            <button id="trigger-overlay" type="button">
+            <button id="trigger-overlay" type="button" onclick="changeIcon(this )">
                 <div class="menuicon">
+                    <div class="bar1"></div>
+                    <div class="bar2"></div>
+                    <div class="bar3"></div>
+                </div>
             </button>
         </div>
         <div class="overlay overlay-door">
             <button type="button" class="overlay-close icon icon_menu">Close</button>
             <nav>
                 <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Content</a></li>
-                    <li><a href="#">Skills</a></li>
-                    <li><a href="#">Footer</a></li>
+                    <li><a href="#" class="home-menu-button">Home</a></li>
+                    <li><a href="#" class="content-menu-button">Content</a></li>
+                    <li><a href="#" class="skills-menu-button">Skills</a></li>
+                    <li><a href="#" class="footer-menu-button">Footer</a></li>
                 </ul>
             </nav>
         </div>
     </div>
 </section>
-<section class="content">
+<section class="content" id="content">
     <div class="container">
         <div style="text-align: center;"><p> ---------- CONTENT ---------- </p></div>
     </div>
@@ -52,7 +56,6 @@
 </section>
 <script src="js/modernizr.custom.js"></script>
 <script src="js/classie.js"></script>
-<script src="js/showButtonHome.js"></script>
 <!-- BOOTSTRAP -->
 <script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/js/bootstrap.min.js"

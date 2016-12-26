@@ -1,4 +1,35 @@
+
+
 @mixin setMenu(){
+
+  .menu #trigger-overlay .menuicon{
+    display: inline-block;
+    cursor: pointer;
+    background-color: transparent;
+  }
+  .menu #trigger-overlay .bar1, .bar2, .bar3{
+    width: 20px;
+    height: 2px;
+    background-color: white;
+    margin: 2px 0;
+    transition: 0.4s;
+  }
+  .change .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-2px, 2px) ;
+    transform: rotate(-45deg) translate(-2px, 2px) ;
+  }
+
+  .change .bar2 {opacity: 0;}
+
+  .change .bar3 {
+    -webkit-transform: rotate(45deg) translate(-2px, -2px) ;
+    transform: rotate(45deg) translate(-4px, -4px) ;
+  }
+
+  .menu #trigger-overlay:focus{
+    outline:none;
+  }
+
   .menu #trigger-overlay{
     position: absolute;
     top: 2em;
@@ -17,23 +48,6 @@
     border: 1px solid #fff;
     border-color: hsla(0, 0%, 100%, 1);
   }
-
-  .menu #trigger-overlay .menuicon{
-    font-family:"icons";
-
-    display:inline-block;
-    vertical-align:middle;
-    line-height:1;
-    font-weight:normal;
-    font-style:normal;
-    speak:none;
-    text-decoration:inherit;
-    text-transform:none;
-    text-rendering:auto;
-    -webkit-font-smoothing:antialiased;
-    -moz-osx-font-smoothing:grayscale;
-  }
-
 }
 
 @mixin setButtonScrolling(){
@@ -92,9 +106,126 @@
   }
 }
 
+@mixin setButtonMenu(){
+  .overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: #0C151E;
+    .overlay-close {
+      width: 80px;
+      height: 80px;
+      position: absolute;
+      right: 20px;
+      top: 20px;
+      overflow: hidden;
+      border: none;
+      text-indent: 200%;
+      color: transparent;
+      outline: none;
+      z-index: 100;
+    }
+    nav {
+      text-align: center;
+      position: relative;
+      top: 50%;
+      height: 60%;
+      -webkit-transform: translateY(-50%);
+      transform: translateY(-50%);
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 auto;
+      display: inline-block;
+      height: 100%;
+      position: relative;
+      li {
+        display: block;
+        //height: 20%;
+    //    height: calc(100% / 5);
+        min-height: 54px;
+ //       -webkit-backface-visibility: hidden;
+   //     backface-visibility: hidden;
+        a {
+          font-size: 54px;
+          font-weight: 300;
+          display: block;
+          color: #fff;
+          -webkit-transition: color 0.2s;
+          transition: color 0.2s;
+        }
+        a:hover{
+          font-size: 60px;
+          background-color: transparent;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+  .overlay-door {
+    visibility: hidden;
+    width: 0;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    -webkit-transition: width 0.5s 0.3s, visibility 0s 0.8s;
+    transition: width 0.5s 0.3s, visibility 0s 0.8s;
+    &.open {
+      visibility: visible;
+      width: 100%;
+      -webkit-transition: width 0.5s;
+      transition: width 0.5s;
+    }
+    nav {
+      position: absolute;
+      left: 50%;
+      -webkit-transform: translateY(-50%) translateX(-50%);
+      transform: translateY(-50%) translateX(-50%);
+      opacity: 0;
+      -webkit-transition: opacity 0.3s 0.5s;
+      transition: opacity 0.3s 0.5s;
+    }
+    .overlay-close {
+      opacity: 0;
+      -webkit-transition: opacity 0.3s 0.5s;
+      transition: opacity 0.3s 0.5s;
+    }
+    &.open {
+      nav, .overlay-close {
+        opacity: 1;
+        -webkit-transition-delay: 0.5s;
+        transition-delay: 0.5s;
+      }
+    }
+    &.close {
+      nav, .overlay-close {
+        -webkit-transition-delay: 0s;
+        transition-delay: 0s;
+      }
+    }
+  }
+
+  @media screen and (max-height: 30.5em) {
+    .overlay {
+      nav {
+        height: 70%;
+        font-size: 34px;
+      }
+      ul li {
+        min-height: 34px;
+      }
+    }
+  }
+}
+
 @mixin setSectionHome(){
   background-image: url('../images/background-home.jpg');
   background-size: cover;
   @include setButtonScrolling();
   @include setMenu();
+  @include setButtonMenu();
 }
