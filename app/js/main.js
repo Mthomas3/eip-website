@@ -3,10 +3,10 @@
 $(function(){
 
     const btnScrolling = $('.scroll-down')
-    const btnMenuHome = $('.home-menu-button').hide()
-    const btnMenuContent = $('.content-menu-button').hide()
-    const btnMenuSkills = $('.skills-menu-button').hide()
-    const btnMenuFooter = $('.footer-menu-button').hide()
+    const btnMenuHome = $('.home-menu-button')
+    const btnMenuContent = $('.content-menu-button')
+    const btnMenuSkills = $('.skills-menu-button')
+    const btnMenuFooter = $('.footer-menu-button')
 
 
 
@@ -29,6 +29,9 @@ $(function(){
             classie.remove( overlay, 'open' );
             classie.add( overlay, 'close' );
 
+            btnScrolling.show()
+            $('#trigger-overlay').removeClass('change')
+
             var onEndTransitionFn = function( ev ) {
                 if( support.transitions ) {
                     if( ev.propertyName !== 'visibility' ) return;
@@ -45,6 +48,8 @@ $(function(){
         }
         else if( !classie.has( overlay, 'close' ) ) {
             classie.add( overlay, 'open' );
+            btnScrolling.hide()
+            $('#trigger-overlay').addClass('change')
         }
     }
 
@@ -56,6 +61,7 @@ $(function(){
     btnMenuFooter.click(function(){
         toggleOverlay()
         btnScrolling.show()
+        $('#trigger-overlay').toggleClass('change')
         $('html, body').animate({scrollTop: $('section.footer').offset().top}, 'slow')
         return false
     })
@@ -81,33 +87,9 @@ $(function(){
         return false
     })
 
-    $('#trigger-overlay').click(function(){
-        classie.has(overlay, 'open') ? btnScrolling.show() : btnScrolling.hide()
-        setTimeout(function(){
-            btnMenuHome.animate({
-                height: 'toggle',
-            })
-            btnMenuContent.animate({
-                height: 'toggle'
-            })
-            btnMenuSkills.animate({
-                height: 'toggle'
-            })
-            btnMenuFooter.animate({
-                height: 'toggle'
-            })
-        }, 500)
-
-    })
-
 
 
     triggerBttn.addEventListener( 'click', toggleOverlay );
     closeBttn.addEventListener( 'click', toggleOverlay );
 
 })
-
-function changeIcon(x){
-    window.setTimeout(500);
-    x.classList.toggle("change")
-}

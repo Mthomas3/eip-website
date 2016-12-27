@@ -3,6 +3,11 @@
 @import 'skills.scss';
 @import 'footer.scss';
 
+@font-face {
+  font-family: myFirstFont;
+  src: url(font/AlfaSlabOne-Regular.ttf);
+}
+
 html {
 
   height: 100%;
@@ -12,6 +17,7 @@ body{
   height: 100%;
   width:100%;
   background-color: #2B2B2B;
+  font-family: myFirstFont;
 }
 
 button{
@@ -49,4 +55,39 @@ h1, p{
 
 .footer{
   @include setFooter();
+}
+
+.menu-button {
+  position: relative;
+  top: -3em;
+  opacity: 0;
+}
+
+.home-menu-button {
+  transition: opacity .75s cubic-bezier(.165,.84,.44,1) .4s,
+  top .75s cubic-bezier(.165,.84,.44,1) .4s,
+  transform .2s cubic-bezier(.165,.84,.44,1);
+}
+
+.content-menu-button {
+  transition: opacity .75s cubic-bezier(.165,.84,.44,1) .6s,
+  top .75s cubic-bezier(.165,.84,.44,1) .6s,
+  transform .2s cubic-bezier(.165,.84,.44,1);
+}
+
+.skills-menu-button{
+  transition: opacity .75s cubic-bezier(.165,.84,.44,1) .8s,
+  top .75s cubic-bezier(.165,.84,.44,1) .8s,
+  transform .2s cubic-bezier(.165,.84,.44,1);
+}
+
+.footer-menu-button {
+  transition: opacity .75s cubic-bezier(.165,.84,.44,1) 1s,
+  top .75s cubic-bezier(.165,.84,.44,1) 1s,
+  transform .2s cubic-bezier(.165,.84,.44,1);
+}
+
+.overlay.open .menu-button {
+  top: 0;
+  opacity: 1;
 }

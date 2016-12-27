@@ -1,8 +1,7 @@
-
-
 @mixin setMenu(){
 
   .menu #trigger-overlay .menuicon{
+    position: relative;
     display: inline-block;
     cursor: pointer;
     background-color: transparent;
@@ -24,6 +23,10 @@
   .change .bar3 {
     -webkit-transform: rotate(45deg) translate(-2px, -2px) ;
     transform: rotate(45deg) translate(-4px, -4px) ;
+  }
+
+  .change .menuicon {
+    top: 2px;
   }
 
   .menu #trigger-overlay:focus{
@@ -60,6 +63,7 @@
   .scroll-down a {
     position: absolute;
     left: 50%;
+    margin-left: -20px;
     bottom: 10%;
     padding: 40px 20px;
   }
@@ -154,11 +158,10 @@
           font-weight: 300;
           display: block;
           color: #fff;
-          -webkit-transition: color 0.2s;
-          transition: color 0.2s;
+          //transition: all 0.2s ease-in-out;
         }
         a:hover{
-          font-size: 60px;
+          transform: scale(1.1);
           background-color: transparent;
           text-decoration: none;
         }
