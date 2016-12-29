@@ -1,4 +1,18 @@
-//todo different file
+//todo different files
+
+class HandleSectionMenu{
+
+    static HandleAction(section, scrolling){
+        scrolling.show()
+        $('html, body').animate({scrollTop: $(section).offset().top}, 'slow')
+    }
+
+    static HandleScrolling(section){
+        $('html, body').animate({scrollTop: $(section).offset().top}, 'slow')
+        return false
+    }
+
+}
 
 $(function(){
 
@@ -7,8 +21,7 @@ $(function(){
     const btnMenuContent = $('.content-menu-button')
     const btnMenuSkills = $('.skills-menu-button')
     const btnMenuFooter = $('.footer-menu-button')
-
-
+    const menu = $('#trigger-overlay')
 
     var triggerBttn = document.getElementById( 'trigger-overlay' ),
         overlay = document.querySelector( 'div.overlay' ),
@@ -30,7 +43,7 @@ $(function(){
             classie.add( overlay, 'close' );
 
             btnScrolling.show()
-            $('#trigger-overlay').removeClass('change')
+            menu.removeClass('change')
 
             var onEndTransitionFn = function( ev ) {
                 if( support.transitions ) {
@@ -49,45 +62,33 @@ $(function(){
         else if( !classie.has( overlay, 'close' ) ) {
             classie.add( overlay, 'open' );
             btnScrolling.hide()
-            $('#trigger-overlay').addClass('change')
+            menu.addClass('change')
         }
     }
 
     btnScrolling.click(function(){
-        $('html, body').animate({scrollTop: $('section.content').offset().top}, 'slow')
-        return false
+        return (HandleSectionMenu.HandleScrolling('section.content'))
     })
 
     btnMenuFooter.click(function(){
         toggleOverlay()
-        btnScrolling.show()
-        $('#trigger-overlay').toggleClass('change')
-        $('html, body').animate({scrollTop: $('section.footer').offset().top}, 'slow')
-        return false
+        return (HandleSectionMenu.HandleAction('section.footer', btnScrolling))
     })
 
     btnMenuSkills.click(function(){
         toggleOverlay()
-        btnScrolling.show()
-        $('html, body').animate({scrollTop: $('section.skills').offset().top}, 'slow')
-        return false
+        return (HandleSectionMenu.HandleAction('section.skills', btnScrolling))
     })
 
     btnMenuContent.click(function(){
         toggleOverlay()
-        btnScrolling.show()
-        $('html, body').animate({scrollTop: $('section.content').offset().top}, 'slow')
-        return false
+        return (HandleSectionMenu.HandleAction('section.content', btnScrolling))
     })
 
     btnMenuHome.click(function(){
         toggleOverlay()
-        btnScrolling.show()
-        $('html, body').animate({scrollTop: $('section.home').offset().top}, 'slow')
-        return false
+        return (HandleSectionMenu.HandleAction('section.home', btnScrolling))
     })
-
-
 
     triggerBttn.addEventListener( 'click', toggleOverlay );
     closeBttn.addEventListener( 'click', toggleOverlay );

@@ -255,7 +255,7 @@
 }
 
 @mixin setSectionHome(){
-  background-image: url('../images/background-home.jpg');
+  background-image: url('../images/test1.jpg');
   background-size: cover;
   @include setButtonScrolling();
   @include setMenu();
