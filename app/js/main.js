@@ -50,6 +50,7 @@ $(function(){
 
             btnScrolling.show()
             menu.removeClass('change')
+            $('body').removeClass('no-scrolling')
 
             var onEndTransitionFn = function( ev ) {
                 if( support.transitions ) {
@@ -69,6 +70,7 @@ $(function(){
             classie.add( overlay, 'open' );
             btnScrolling.hide()
             menu.addClass('change')
+            $('body').addClass('no-scrolling')
         }
     }
 
