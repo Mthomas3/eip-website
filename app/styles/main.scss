@@ -139,6 +139,7 @@ h1, p{
   }
 }
 
+
 #loader-wrapper .loader-section {
   position: fixed;
   top: 0;
@@ -202,8 +203,10 @@ h1, p{
 }
 
 #typing_text{
+  font-family: 'Pacifico', cursive;
+  font-size: 25px;
   position: absolute;
   top: 20%;
-  left: -20%;
+  left: -13%;
   color:white;
 }

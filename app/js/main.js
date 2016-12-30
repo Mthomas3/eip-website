@@ -2,10 +2,11 @@
 
 
 $(document).ready(function(){
+    $('#typing_text').show()
     setTimeout(function(){
+        $('#typing_text').hide()
         $('body').addClass('loaded')
-        $('body').addClass('addSentence')
-    }, 3500)
+    }, 4500)
 })
 
 class HandleSectionMenu{
