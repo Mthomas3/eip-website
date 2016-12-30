@@ -6,6 +6,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css"
           integrity="sha384-AysaV+vQoT3kOAXZkl02PThvDr8HYKPZhNT5h/CXfBThSRXQ6jW5DO2ekP5ViFdi" crossorigin="anonymous">
     <script src="js/main.js"></script>
+    <script src="js/typed.js"></script>
+    <script src="js/handleTyped.js"></script>
     <link rel="stylesheet" href="styles/main.css">
     <link href="https://fonts.googleapis.com/css?family=Knewave" rel="stylesheet">
     <title> Neo </title>
@@ -13,9 +15,17 @@
 <body>
 <div id="loader-wrapper">
     <div id="loader"></div>
-
-    <div class="loader-section section-left"></div>
-    <div class="loader-section section-right"></div>
+    <div class="loader-section section-left">
+    </div>
+    <div class="loader-section section-right">
+        <div id="typed-strings">
+            <p>Neo, Vos proche chez vous.</p>
+        </div><span id="typing_text"></span>
+        <script>
+            const typed = new writeErase(50, 30,'html', false)
+            typed.printTyped()
+        </script>
+    </div>
 
 </div>
 <section class="home">

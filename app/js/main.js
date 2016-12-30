@@ -1,9 +1,11 @@
 //todo different files
 
+
 $(document).ready(function(){
     setTimeout(function(){
         $('body').addClass('loaded')
-    }, 3000)
+        $('body').addClass('addSentence')
+    }, 3500)
 })
 
 class HandleSectionMenu{

@@ -157,8 +157,6 @@ h1, p{
   }
 }
 
-/* Loaded */
-
 .loaded #loader-wrapper .loader-section.section-left {
   -webkit-transform: translateX(-100%);
   -ms-transform: translateX(-100%);
@@ -190,8 +188,6 @@ h1, p{
   }
 }
 
-/* JavaScript Turned Off */
-
 .no-js {
   #loader-wrapper {
     display: none;
@@ -203,4 +199,11 @@ h1, p{
 
 .no-scrolling{
   overflow:hidden;
+}
+
+#typing_text{
+  position: absolute;
+  top: 20%;
+  left: -20%;
+  color:white;
 }
