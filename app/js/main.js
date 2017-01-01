@@ -3,10 +3,12 @@
 
 $(document).ready(function(){
     $('#typing_text').show()
+    $('#trigger-overlay').hide()
     setTimeout(function(){
         $('#typing_text').hide()
+        $('#trigger-overlay').show()
         $('body').addClass('loaded')
-    }, 4500)
+    }, 5000)//5000)
 })
 
 class HandleSectionMenu{

@@ -7,6 +7,7 @@
           integrity="sha384-AysaV+vQoT3kOAXZkl02PThvDr8HYKPZhNT5h/CXfBThSRXQ6jW5DO2ekP5ViFdi" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Baloo+Thambi" rel="stylesheet">
     <script src="js/main.js"></script>
     <script src="js/typed.js"></script>
     <script src="js/handleTyped.js"></script>
@@ -16,18 +17,24 @@
 </head>
 <body>
 <div id="loader-wrapper">
+    <div class="bar-load-1"></div>
+    <div class="bar-load-2"></div>
+    <div class="bar-load-3"></div>
+    <div class="bar-load-4"></div>
+    <div class="bar-load-5"></div>
     <div id="loader"></div>
-    <div class="loader-section section-left">
+    <div class="loader-section section-left"></div>
+    <div class="loader-section section-right"></div>
+    <div id="typed-strings">
+        <p>Neo, vos proche chez vous.</p>
     </div>
-    <div class="loader-section section-right">
-        <div id="typed-strings">
-            <p>Neo, vos proche chez vous.</p>
-        </div><span id="typing_text"></span>
-        <script>
+    <p id="typing_text"></p>
+    <script>
+        setTimeout(function(){
             const typed = new writeErase(100, 500,'html', false)
             typed.printTyped()
-        </script>
-    </div>
+        }, 1000)
+    </script>
 
 </div>
 <section class="home">
