@@ -1,6 +1,5 @@
 //todo different files
 
-
 $(document).ready(function(){
     $('#typing_text').show()
     $('#trigger-overlay').hide()
