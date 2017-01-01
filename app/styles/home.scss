@@ -254,10 +254,149 @@
   }
 }
 
+@mixin setLoader(){
+  #loader-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+
+  #loader-wrapper .loader-section {
+    position: fixed;
+    top: 0;
+    width: 51%;
+    height: 100%;
+    background: #0C151E;
+    z-index: 1;
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+    &.section-left {
+      left: 0;
+    }
+    &.section-right {
+      right: 0;
+    }
+  }
+
+  .loaded {
+    #loader {
+      opacity: 0;
+      -webkit-transition: all 0.3s ease-out;
+      transition: all 0.3s ease-out;
+    }
+    #loader-wrapper {
+      animation: hide-background 8s forwards;
+    }
+  }
+
+  @keyframes hide-background{
+    0%{
+      opacity: 1;
+    }
+    100%{
+      opacity:0;
+      visibility: hidden;
+    }
+  }
+
+  .no-js {
+    #loader-wrapper {
+      display: none;
+    }
+    h1 {
+      color: #222222;
+    }
+  }
+
+  .no-scrolling{
+    overflow:hidden;
+  }
+
+  .loading-bar{
+    position: absolute;
+    top: 0;
+    height: 0.5%;
+    width: 0.1%;
+    background-color: #CB3B3B;
+    z-index: 2;
+    animation: bar-load 8s;
+  }
+
+  @keyframes bar-load {
+    0%{
+      width: 0.1%;
+    }
+    50%{
+      width: 50%;
+    }
+    100%{
+      width: 100%;
+    }
+  }
+
+  #typing_text{
+    position: relative;
+    top: 20%;
+    text-align: center;
+    font-family: 'Baloo Thambi', cursive;
+    font-size: 50px;
+    color:white;
+    z-index: 3;
+  }
+
+  @mixin loader-bar($position, $delay){
+    position: absolute;
+    left: $position;
+    top: 1%;
+    height: 0%;
+    width: 2px;
+    background-color: white;
+    z-index: 2;
+    opacity: 0.05;
+    animation: animate-bar 6s;
+    animation-delay: $delay;
+  }
+
+  .bar-load-1{
+    @include loader-bar(16.6%, 2s);
+  }
+
+  .bar-load-2{
+    @include loader-bar(33.2%, 1s);
+  }
+
+  .bar-load-3{
+    @include loader-bar(49.8%, 3s);
+  }
+
+  .bar-load-4{
+    @include loader-bar(66.4%, 2s);
+  }
+
+  .bar-load-5{
+    @include loader-bar(83%, 1s);
+  }
+
+  @keyframes animate-bar {
+    0% {
+      height: 0%;
+    }
+
+    100% {
+      height: 100%;
+    }
+  }
+}
+
 @mixin setSectionHome(){
   background-image: url('../images/test1.jpg');
   background-size: cover;
   @include setButtonScrolling();
   @include setMenu();
   @include setButtonMenu();
+  @include setLoader();
 }
