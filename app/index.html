@@ -28,20 +28,22 @@
     <div class="loader-section section-left"></div>
     <div class="loader-section section-right"></div>
     <div id="typed-strings">
-        <p>NEO, VOS PROCHE CHEZ VOUS</p>
+        <p>NEO, VOS PROCHES CHEZ VOUS</p>
     </div>
     <p id="typing_text"></p>
     <script>
         setTimeout(function () {
             const typed = new writeErase(100, 500, 'html', false)
             typed.printTyped()
-        }, 1000)
+        }, 1200)
     </script>
 
 </div>
 <section class="home">
     <div class="container">
-        <div style="text-align: center;"><p> ---------- HOME ---------- </p></div>
+
+        <div class="titles-neo">Neo, vos proches chez vous!</div>
+
         <div class="scroll-down">
             <a href="#" class="scroll-down"><span></span></a>
         </div>
@@ -56,18 +58,33 @@
         </div>
         <div class="buttons-wrapper">
             <div class="buttons">
+                <div class="titles-button">
+                </div>
                 <button id="share-button" type="button">
                     <i class="fa fa-share-alt" aria-hidden="true"></i>
                 </button>
                 <button id="twitter-button" type="button">
                     <span class="fontawesome-twitter"></span>
                 </button>
-                <!--<button id="following-button" type="button">
-                    <span class="fontawesome-plus"></span>
-                </button>-->
                 <button id="facebook-button" type="button">
                     <span class="entypo-facebook"></span>
                 </button>
+            </div>
+        </div>
+        <div class="buttons-wrapper-following">
+            <div class="buttons-following">
+                <div class="titles-button">
+                </div>
+                <button id="share-button-following" type="button">
+                    <i class="fa fa-share-alt" aria-hidden="true"></i>
+                </button>
+                <button id="twitter-button-following" type="button">
+                    <span class="fontawesome-twitter"></span>
+                </button>
+                <button id="facebook-button-following" type="button">
+                    <span class="entypo-facebook"></span>
+                </button>
+                <input type="text" name="email" class="email-button-following">
             </div>
         </div>
         <div class="overlay overlay-door">
@@ -85,18 +102,19 @@
 </section>
 <section class="content" id="content">
     <div class="container">
-        <div style="text-align: center;"><p> ---------- CONTENT ---------- </p></div>
+        <!--<div style="text-align: center;"><p> ---------- CONTENT ---------- </p></div>-->
     </div>
 </section>
 <section class="skills">
     <div class="container">
-        <div style="text-align: center;"><p> ---------- SKILLS ---------- </p></div>
+        <!--<div style="text-align: center;"><p> ---------- SKILLS ---------- </p></div>-->
     </div>
 </section>
 </div>
 <section class="footer">
     <div class="container">
-        <div style="text-align: center;"><p> ---------- FOOTER ---------- </p></div>
+        <div style="text-align: center;"><p>©2017 neo</p></div>
+        <!--<div style="text-align: center;"><p> ---------- FOOTER ---------- </p></div>-->
     </div>
 </section>
 <script src="js/modernizr.custom.js"></script>

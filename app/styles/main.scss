@@ -196,7 +196,7 @@ h1, p{
     height: 100%;
   }
 }
-// tu push jamais ? x) pour save
+
 @mixin createButton($bottom, $right){
   height: 3.125em;
   width: 3.125em;
@@ -206,8 +206,18 @@ h1, p{
   border: 2px solid #CB0C54;
   border-color: hsla(337, 88%, 42%, 0.25);
   background-color: transparent;
-  //transition: border-color 0.25s linear;
   cursor: pointer;
+  outline:none;
+}
+
+@mixin createInput(){
+  height: 3.125em;
+  width: 200px;
+  overflow: hidden;
+  display: inline-block;
+  border: 2px solid #CB0C54;
+  border-color: hsla(337, 88%, 42%, 0.25);
+  background-color: transparent;
   outline:none;
 }
 
@@ -248,6 +258,12 @@ h1, p{
   color:white;
 }
 
+#twitter-button-following{
+  right: 0;
+  transition: all .2s ease-in-out;
+  @include createButton(2em, 2em);
+  color:white;
+}
 
 #share-button{
   @include createButton(2em, 2em);
@@ -255,6 +271,19 @@ h1, p{
     font-size: 1em;
     color:white;
   }
+}
+#share-button-following{
+  @include createButton(2em, 2em);
+  .fa {
+    font-size: 1em;
+    color:white;
+  }
+}
+
+.email-button-following{
+  @include createInput();
+  background-color: white;
+  opacity: 0.5;
 }
 
 #facebook-button{
@@ -264,8 +293,27 @@ h1, p{
   color:white;
 }
 
+#facebook-button-following{
+  right: 2em;
+  transition: all .2s ease-in-out;
+  @include createButton(2em, 2em);
+  color:white;
+}
+
+.slide-twitter-push-following .buttons-wrapper-following{
+  .buttons-following{
+    right: 0;
+  }
+}
+
 .slide-twitter-push .buttons-wrapper{
   .buttons {
+    right: 0;
+  }
+}
+
+.slide-facebook-push-following .buttons-wrapper-following{
+  .buttons-following{
     right: 0;
   }
 }
@@ -274,6 +322,10 @@ h1, p{
   .buttons {
     right: 0;
   }
+}
+
+.slide-facebook-push-following #share-button-following{
+  display: none;
 }
 
 .slide-facebook-push #share-button {
@@ -291,4 +343,42 @@ h1, p{
     right: -3.3em * 2;
     transition: right 0.4s ease-in-out;
   }
+}
+
+.buttons-wrapper-following{
+  position: absolute;
+  right: 2em;
+  bottom: 5.5em;
+  overflow: hidden;
+  .buttons-following{
+    position: relative;
+    right: -310px;
+
+    transition: right 0.4s ease-in-out;
+  }
+}
+
+.titles-button{
+  visibility: hidden;
+  position: absolute;
+  right: 10.2em;
+  bottom: 1.5em;
+  width: 50px;
+  height: 1px;
+  color:white;
+  opacity: 0.5;
+  background-color: white;
+  p{
+    right: 15em;
+    color:white;
+  }
+}
+
+.titles-neo{
+  position: relative;
+  text-align: center;
+  font-family: 'Baloo Thambi', cursive;
+  font-size: 60px;
+  color:white;
+  opacity: 0.6;
 }

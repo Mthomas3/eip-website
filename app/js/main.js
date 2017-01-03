@@ -3,8 +3,6 @@
 $(document).ready(function(){
     $('#typing_text').show()
     $('#trigger-overlay').hide()
-   /* $('#share-button').hide()
-    $('#following-button').hide()*/
     setTimeout(function(){
         $('#typing_text').hide()
         $('body').addClass('loaded')
@@ -110,7 +108,8 @@ $(function(){
         return (HandleSectionMenu.HandleAction('section.home', btnScrolling))
     })
 
-    btnShare.click(function(){
+    btnShare.click(function(e){
+        e.stopPropagation()
         if (!body.hasClass('slide-facebook-push')){
             body.addClass('slide-facebook-push')
             body.addClass('slide-twitter-push')
@@ -119,13 +118,23 @@ $(function(){
     })
 
     body.click(function(){
-        if (body.hasClass('slide-facebook-push')){
+
+        if (body.hasClass('slide-facebook-push') || body.hasClass('slide-facebook-push-following')){
             body.removeClass('slide-facebook-push')
             body.removeClass('slide-twitter-push')
+            body.removeClass('slide-facebook-push-following')
+            body.removeClass('slide-twitter-push-following')
         }
         return false
     })
 
+    $('#share-button-following').click(function(e){
+        e.stopPropagation()
+        if (!body.hasClass('slide-facebook-push-following')){
+            body.addClass('slide-facebook-push-following')
+            body.addClass('slide-twitter-push-following')
+        }
+    })
 
     triggerBttn.addEventListener( 'click', toggleOverlay );
     closeBttn.addEventListener( 'click', toggleOverlay );
