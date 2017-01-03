@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Baloo+Thambi" rel="stylesheet">
+    <script src="https://use.fontawesome.com/dd6a26fee5.js"></script>
     <script src="js/main.js"></script>
     <script src="js/typed.js"></script>
     <script src="js/handleTyped.js"></script>
@@ -31,8 +32,8 @@
     </div>
     <p id="typing_text"></p>
     <script>
-        setTimeout(function(){
-            const typed = new writeErase(100, 500,'html', false)
+        setTimeout(function () {
+            const typed = new writeErase(100, 500, 'html', false)
             typed.printTyped()
         }, 1000)
     </script>
@@ -52,6 +53,22 @@
                     <div class="bar3"></div>
                 </div>
             </button>
+        </div>
+        <div class="buttons-wrapper">
+            <div class="buttons">
+                <button id="share-button" type="button">
+                    <i class="fa fa-share-alt" aria-hidden="true"></i>
+                </button>
+                <button id="twitter-button" type="button">
+                    <span class="fontawesome-twitter"></span>
+                </button>
+                <!--<button id="following-button" type="button">
+                    <span class="fontawesome-plus"></span>
+                </button>-->
+                <button id="facebook-button" type="button">
+                    <span class="entypo-facebook"></span>
+                </button>
+            </div>
         </div>
         <div class="overlay overlay-door">
             <button type="button" class="overlay-close icon icon_menu">Close</button>

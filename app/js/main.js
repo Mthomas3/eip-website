@@ -3,11 +3,15 @@
 $(document).ready(function(){
     $('#typing_text').show()
     $('#trigger-overlay').hide()
+   /* $('#share-button').hide()
+    $('#following-button').hide()*/
     setTimeout(function(){
         $('#typing_text').hide()
-        $('#trigger-overlay').show()
         $('body').addClass('loaded')
-    }, 5000)//5000)
+        $('#trigger-overlay').show()
+        $('#share-button').show()
+        $('#following-button').show()
+    }, 5000)
 })
 
 class HandleSectionMenu{
@@ -32,6 +36,11 @@ $(function(){
     const btnMenuSkills = $('.skills-menu-button')
     const btnMenuFooter = $('.footer-menu-button')
     const menu = $('#trigger-overlay')
+    const btnFollwing = $('#following-button')
+    const btnShare = $('#share-button')
+    const btnFacebook = $('#facebook-button')
+    const btnTwitter = $('#twitter-button')
+    const body = $('body')
 
     var triggerBttn = document.getElementById( 'trigger-overlay' ),
         overlay = document.querySelector( 'div.overlay' ),
@@ -45,7 +54,6 @@ $(function(){
         },
         transEndEventName = transEndEventNames[ Modernizr.prefixed( 'transition' ) ],
         support = { transitions : Modernizr.csstransitions };
-
 
     function toggleOverlay() {
         if( classie.has( overlay, 'open' ) ) {
@@ -102,7 +110,23 @@ $(function(){
         return (HandleSectionMenu.HandleAction('section.home', btnScrolling))
     })
 
+    btnShare.click(function(){
+        if (!body.hasClass('slide-facebook-push')){
+            body.addClass('slide-facebook-push')
+            body.addClass('slide-twitter-push')
+        }
+        return false
+    })
+
+    body.click(function(){
+        if (body.hasClass('slide-facebook-push')){
+            body.removeClass('slide-facebook-push')
+            body.removeClass('slide-twitter-push')
+        }
+        return false
+    })
+
+
     triggerBttn.addEventListener( 'click', toggleOverlay );
     closeBttn.addEventListener( 'click', toggleOverlay );
-
 })

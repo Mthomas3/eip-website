@@ -1,9 +1,12 @@
 @mixin setMenu(){
 
+  #trigger-overlay{
+    cursor: pointer;
+  }
+
   .menu #trigger-overlay .menuicon{
     position: relative;
     display: inline-block;
-    cursor: pointer;
     background-color: transparent;
   }
   .menu #trigger-overlay .bar1, .bar2, .bar3{
@@ -100,6 +103,8 @@
     margin-left: -20px;
     bottom: 10%;
     padding: 40px 20px;
+    cursor: pointer;
+
   }
 
   .scroll-down a span{
@@ -259,7 +264,7 @@
 }
 
 @mixin setSectionHome(){
-  background-image: url('../images/test1.jpg');
+  background-image: url('../images/back.jpg');
   background-size: cover;
   @include setButtonScrolling();
   @include setMenu();
