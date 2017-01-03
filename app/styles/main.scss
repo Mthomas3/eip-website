@@ -5,6 +5,9 @@
 
 //todo different supports, font-face need to be fixed!
 
+@import url(http://weloveiconfonts.com/api/?family=fontawesome);
+@import url(http://weloveiconfonts.com/api/?family=entypo);
+
 @font-face {
   font-family: 'Knewave', cursive;
 }
@@ -100,7 +103,7 @@ h1, p{
     opacity: 1;
   }
   100%{
-    opacity:0;
+    opacity : 0;
     visibility: hidden;
   }
 }
@@ -193,3 +196,86 @@ h1, p{
     height: 100%;
   }
 }
+// tu push jamais ? x) pour save
+@mixin createButton($bottom, $right){
+  position: absolute;
+  bottom: $bottom;
+  right: $right;
+  height: 3.125em;
+  width: 3.125em;
+  overflow: hidden;
+  z-index: 152;
+  display: block;
+  border: 2px solid #CB0C54;
+  border-color: hsla(337, 88%, 42%, 0.25);
+  background-color: transparent;
+  //transition: border-color 0.25s linear;
+  cursor: pointer;
+  outline:none;
+}
+
+#following-button:hover{
+  background-color: #CB0C54;
+}
+
+#share-button:hover{
+  background-color: #CB0C54;
+}
+
+#facebook-button:hover,
+#facebook-button.active,
+#twitter-button:hover,
+#twitter-button.active{
+  background-color: #CB0C54;
+}
+
+[class*="entypo-"]:before {
+  font-family: 'entypo', sans-serif;
+}
+
+[class*="fontawesome-"]:before {
+  font-family: 'FontAwesome', sans-serif;
+}
+
+#following-button{
+  @include createButton(5.5em, 2em);
+  .fontawesome-plus{
+    color:white;
+  }
+}
+
+#twitter-button{
+  right: 0;
+  transition: all .2s ease-in-out;
+  @include createButton(2em, 2em);
+  color:white;
+}
+
+
+#share-button{
+  @include createButton(2em, 2em);
+  .fa {
+    font-size: 1em;
+    color:white;
+  }
+}
+
+#facebook-button{
+  right: 2em;
+  transition: all .2s ease-in-out;
+  @include createButton(2em, 2em);
+  color:white;
+}
+
+.slide-twitter-push{
+  #twitter-button{
+    right: 2em;
+  }
+}
+
+.slide-facebook-push{
+  #facebook-button{
+    right: 5.5em
+  }
+}
+// tu peux remettre comme avant ?
