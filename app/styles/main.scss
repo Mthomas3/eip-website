@@ -198,14 +198,11 @@ h1, p{
 }
 // tu push jamais ? x) pour save
 @mixin createButton($bottom, $right){
-  position: absolute;
-  bottom: $bottom;
-  right: $right;
   height: 3.125em;
   width: 3.125em;
   overflow: hidden;
   z-index: 152;
-  display: block;
+  display: inline-block;
   border: 2px solid #CB0C54;
   border-color: hsla(337, 88%, 42%, 0.25);
   background-color: transparent;
@@ -267,15 +264,31 @@ h1, p{
   color:white;
 }
 
-.slide-twitter-push{
-  #twitter-button{
-    right: 2em;
+.slide-twitter-push .buttons-wrapper{
+  .buttons {
+    right: 0;
   }
 }
 
-.slide-facebook-push{
-  #facebook-button{
-    right: 5.5em
+.slide-facebook-push .buttons-wrapper{
+  .buttons {
+    right: 0;
   }
 }
-// tu peux remettre comme avant ?
+
+.slide-facebook-push #share-button {
+  display: none;
+}
+
+.buttons-wrapper {
+  position: absolute;
+  right: 2em;
+  bottom: 2em;
+  overflow: hidden;
+
+  .buttons {
+    position: relative;
+    right: -3.3em * 2;
+    transition: right 0.4s ease-in-out;
+  }
+}
