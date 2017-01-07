@@ -5,12 +5,10 @@
 
 //todo different supports, font-face need to be fixed!
 
+@font-face { font-family: Delicious; src: url('font/BalooThambi-Regular.ttf') format("truetype"); }
+
 @import url(http://weloveiconfonts.com/api/?family=fontawesome);
 @import url(http://weloveiconfonts.com/api/?family=entypo);
-
-@font-face {
-  font-family: 'Knewave', cursive;
-}
 
 html {
   height: 100%;
@@ -20,7 +18,6 @@ body{
   height: 100%;
   width:100%;
   background-color: #2B2B2B;
-  font-family: myFirstFont;
 }
 
 button{
@@ -49,6 +46,7 @@ h1, p{
 }
 
 .content{
+  //position: relative;
   @include setContent();
 }
 
@@ -143,11 +141,19 @@ h1, p{
   }
 }
 
+body{
+  font-family: Delicious;
+}
+header{
+  font-family: Delicious;
+}
+
 #typing_text{
   position: relative;
   top: 20%;
   text-align: center;
-  font-family: 'Baloo Thambi', cursive;
+  font-family: Delicious;
+  //font-family: 'BalooThambi-Regular', cursive;
   font-size: 50px;
   color:white;
   z-index: 3;
@@ -377,7 +383,7 @@ h1, p{
 .titles-neo{
   position: relative;
   text-align: center;
-  font-family: 'Baloo Thambi', cursive;
+  font-family: Delicious;
   font-size: 60px;
   color:white;
   opacity: 0.6;

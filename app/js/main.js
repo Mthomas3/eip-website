@@ -1,16 +1,40 @@
 //todo different files
 
-$(document).ready(function(){
-    $('#typing_text').show()
-    $('#trigger-overlay').hide()
-    setTimeout(function(){
-        $('#typing_text').hide()
-        $('body').addClass('loaded')
-        $('#trigger-overlay').show()
-        $('#share-button').show()
-        $('#following-button').show()
-    }, 5000)
-})
+if (document.fonts){
+    document.fonts.ready.then(() => {
+        $(document).ready(function(){
+            $('#typing_text').show()
+            $('#trigger-overlay').hide()
+            setTimeout(function(){
+                $('#typing_text').hide()
+                $('body').addClass('loaded')
+                $('#trigger-overlay').show()
+                $('#share-button').show()
+                $('#following-button').show()
+                setTimeout(function(){
+                    $('#loader-wrapper').hide()
+                }, 2500)
+            }, 5000)
+        })
+
+    })
+} else {
+    $(document).ready(function(){
+        $('#typing_text').show()
+        $('#trigger-overlay').hide()
+        setTimeout(function(){
+            $('#typing_text').hide()
+            $('body').addClass('loaded')
+            $('#trigger-overlay').show()
+            $('#share-button').show()
+            $('#following-button').show()
+            setTimeout(function(){
+                $('#loader-wrapper').hide()
+            }, 2500)
+        }, 5000)
+    })
+}
+
 
 class HandleSectionMenu{
 
@@ -118,14 +142,13 @@ $(function(){
     })
 
     body.click(function(){
-
         if (body.hasClass('slide-facebook-push') || body.hasClass('slide-facebook-push-following')){
             body.removeClass('slide-facebook-push')
             body.removeClass('slide-twitter-push')
             body.removeClass('slide-facebook-push-following')
             body.removeClass('slide-twitter-push-following')
         }
-        return false
+
     })
 
     $('#share-button-following').click(function(e){
