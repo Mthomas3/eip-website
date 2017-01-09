@@ -1,47 +1,4 @@
-  @mixin cards(){
-    #boxer-cards{
-      box-sizing: border-box;
-      display: flex;
-      flex-wrap: wrap;
-
-    }
-    .cards{
-      position: relative;
-      top: 10%;
-      height: 350px;
-      width: 250px;
-      //max-width: 100%;
-      background-color: #E4405F;
-      border-radius: 5%;
-      margin: 10px 10px;
-    }
-    #boxer-cards .cards .box-text {
-    }
-    #boxer-cards .cards .box-text p{
-      font-size: 0.8em;
-      line-height: 1em;
-      color:white;
-      opacity: 0.8;
-      margin-left: 20px;
-      margin-right: 20px;
-      background-color: red;
-    }
-    #boxer-cards .cards .box-title {
-      padding-left: 20px;
-      padding-right: 20px;
-      background-color: green;
-    }
-    #boxer-cards .cards .box-title h1{
-      font-size: 1.8em;
-      line-height: 1.0em;
-      color:white;
-    }
-    #boxer-cards .cards .tg-list-item{
-    }
-
-  }
 
   @mixin setContent(){
     background-color: #FFFFFF;
-    @include cards();
   }

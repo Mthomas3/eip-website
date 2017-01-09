@@ -259,8 +259,319 @@
   }
 }
 
-@mixin setLoader(){
+@mixin loader-bar($position, $delay){
+  position: absolute;
+  left: $position;
+  top: 1%;
+  height: 0%;
+  width: 2px;
+  background-color: white;
+  z-index: 2;
+  opacity: 0.05;
+  animation: animate-bar 6s;
+  animation-delay: $delay;
+}
 
+
+@mixin setLoader(){
+  #loader-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+
+  #loader-wrapper .loader-section {
+    position: fixed;
+    top: 0;
+    width: 51%;
+    height: 100%;
+    background: #0C151E;
+    z-index: 1;
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+    &.section-left {
+      left: 0;
+    }
+    &.section-right {
+      right: 0;
+    }
+  }
+
+  .loaded {
+    #loader {
+      opacity: 0;
+      -webkit-transition: all 0.3s ease-out;
+      transition: all 0.3s ease-out;
+    }
+    #loader-wrapper {
+      animation: hide-background 8s forwards;
+    }
+  }
+
+  @keyframes hide-background{
+    0%{
+      opacity: 1;
+    }
+    100%{
+      opacity : 0;
+      visibility: hidden;
+    }
+  }
+
+  .no-js {
+    #loader-wrapper {
+      display: none;
+    }
+    h1 {
+      color: #222222;
+    }
+  }
+
+  .no-scrolling{
+    overflow:hidden;
+  }
+
+  .loading-bar{
+    position: absolute;
+    top: 0;
+    height: 0.5%;
+    width: 0.1%;
+    background-color: #CB3B3B;
+    z-index: 2;
+    animation: bar-load 8s;
+  }
+
+  @keyframes bar-load {
+    0%{
+      width: 0.1%;
+    }
+    50%{
+      width: 50%;
+    }
+    100%{
+      width: 100%;
+    }
+  }
+
+  #typing_text{
+    position: relative;
+    padding-top: 10rem;
+    text-align: center;
+    font-family: Delicious;
+    font-size: 50px;
+    color:white;
+    z-index: 3;
+    opacity: 0.6;
+  }
+
+
+  .bar-load-1{
+    @include loader-bar(16.6%, 2s);
+  }
+
+  .bar-load-2{
+    @include loader-bar(33.2%, 1s);
+  }
+
+  .bar-load-3{
+    @include loader-bar(49.8%, 3s);
+  }
+
+  .bar-load-4{
+    @include loader-bar(66.4%, 2s);
+  }
+
+  .bar-load-5{
+    @include loader-bar(83%, 1s);
+  }
+
+  @keyframes animate-bar {
+    0% {
+      height: 0%;
+    }
+
+    100% {
+      height: 100%;
+    }
+  }
+}
+
+@mixin createButton($bottom, $right){
+  height: 3.125em;
+  width: 3.125em;
+  overflow: hidden;
+  z-index: 152;
+  display: inline-block;
+  border: 2px solid #CB0C54;
+  border-color: hsla(337, 88%, 42%, 0.25);
+  background-color: transparent;
+  cursor: pointer;
+  outline:none;
+}
+
+@mixin createInput(){
+  height: 3.125em;
+  width: 200px;
+  overflow: hidden;
+  display: inline-block;
+  border: 2px solid #CB0C54;
+  border-color: hsla(337, 88%, 42%, 0.25);
+  background-color: transparent;
+  outline:none;
+}
+
+@mixin setButtonShares(){
+
+
+  #following-button:hover{
+    background-color: #CB0C54;
+  }
+
+  #share-button:hover{
+    background-color: #CB0C54;
+  }
+
+  #facebook-button:hover,
+  #facebook-button.active,
+  #twitter-button:hover,
+  #twitter-button.active{
+    background-color: #CB0C54;
+  }
+
+  [class*="entypo-"]:before {
+    font-family: 'entypo', sans-serif;
+  }
+
+  [class*="fontawesome-"]:before {
+    font-family: 'FontAwesome', sans-serif;
+  }
+
+  #following-button{
+    @include createButton(5.5em, 2em);
+    .fontawesome-plus{
+      color:white;
+    }
+  }
+
+  #twitter-button{
+    right: 0;
+    transition: all .2s ease-in-out;
+    @include createButton(2em, 2em);
+    color:white;
+  }
+
+  #twitter-button-following{
+    right: 0;
+    transition: all .2s ease-in-out;
+    @include createButton(2em, 2em);
+    color:white;
+  }
+
+  #share-button{
+    @include createButton(2em, 2em);
+    .fa {
+      font-size: 1em;
+      color:white;
+    }
+  }
+  #share-button-following{
+    @include createButton(2em, 2em);
+    .fa {
+      font-size: 1em;
+      color:white;
+    }
+  }
+
+  .email-button-following{
+    @include createInput();
+    background-color: white;
+    opacity: 0.5;
+  }
+
+  #facebook-button{
+    right: 2em;
+    transition: all .2s ease-in-out;
+    @include createButton(2em, 2em);
+    color:white;
+  }
+
+  #facebook-button-following{
+    right: 2em;
+    transition: all .2s ease-in-out;
+    @include createButton(2em, 2em);
+    color:white;
+  }
+
+  .slide-twitter-push-following .buttons-wrapper-following{
+    .buttons-following{
+      right: 0;
+    }
+  }
+
+  .slide-twitter-push .buttons-wrapper{
+    .buttons {
+      right: 0;
+    }
+  }
+
+  .slide-facebook-push-following .buttons-wrapper-following{
+    .buttons-following{
+      right: 0;
+    }
+  }
+
+  .slide-facebook-push .buttons-wrapper{
+    .buttons {
+      right: 0;
+    }
+  }
+
+  .slide-facebook-push-following #share-button-following{
+    display: none;
+  }
+
+  .slide-facebook-push #share-button {
+    display: none;
+  }
+
+  .buttons-wrapper {
+    position: absolute;
+    right: 2em;
+    bottom: 2em;
+    overflow: hidden;
+
+    .buttons {
+      position: relative;
+      right: -3.3em * 2;
+      transition: right 0.4s ease-in-out;
+    }
+  }
+
+  .buttons-wrapper-following{
+    position: absolute;
+    right: 2em;
+    bottom: 5.5em;
+    overflow: hidden;
+    .buttons-following{
+      position: relative;
+      right: -309px;
+      transition: right 0.4s ease-in-out;
+    }
+  }
+}
+
+@mixin setTitlesHome{
+  .titles-neo{
+    color:white;
+    text-align: center;
+    padding-top: 10rem;
+    font-size: 5vw;
+    opacity: 0.8;
+  }
 }
 
 @mixin setSectionHome(){
@@ -269,5 +580,5 @@
   @include setButtonScrolling();
   @include setMenu();
   @include setButtonMenu();
- // @include setLoader();
+  @include setTitlesHome();
 }
