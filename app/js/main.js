@@ -39,13 +39,13 @@ if (document.fonts){
 class HandleSectionMenu{
 
     static HandleAction(section, scrolling){
-        scrolling.show()
-        $('html, body').animate({scrollTop: $(section).offset().top}, 'slow')
+        scrolling.show();
+        $('html, body').animate({scrollTop: $(section).offset().top}, 'slow');
     }
 
     static HandleScrolling(section){
-        $('html, body').animate({scrollTop: $(section).offset().top}, 'slow')
-        return false
+        $('html, body').animate({scrollTop: $(section).offset().top}, 'slow');
+        return false;
     }
 
 }

@@ -9,7 +9,7 @@ const copy = require('gulp-copy')
 
 gulp.task('copy-script', function () {
 
-    return (gulp.src(['app/js/classie.js', 'app/js/showButtonHome.js', 'app/js/modernizr.custom.js']).pipe(gulp.dest('dist/js/')))
+    return (gulp.src(['app/js/classie.js', 'app/js/handleTyped.js', 'app/js/typed.js', 'app/js/showButtonHome.js', 'app/js/modernizr.custom.js']).pipe(gulp.dest('dist/js/')))
 
 })
 
