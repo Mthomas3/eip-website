@@ -1,4 +1,50 @@
+@import "utils";
 
-  @mixin setContent(){
-    background-color: #FFFFFF;
-  }
+.three-part-section
+{
+  height: 350px;
+  display: table-cell;
+}
+
+.image_content{
+  @include resizeImage();
+}
+
+.table
+{
+  display: table;
+}
+
+.content
+{
+  height: 1050px;
+}
+
+.text-content
+{
+  @include whiteText();
+  background-color: #fd9417;
+  padding-left: 40px;
+}
+
+.vertical-middle
+{
+  @include verticalMiddle();
+}
+
+#fot{
+  background-image: url("../images/fot.png");
+}
+
+#sot{
+  background-image: url("../images/sot.jpeg");
+}
+
+#tot{
+  background-image: url("../images/tot.png");
+}
+
+.white-text-container
+{
+  @include whiteText();
+}
