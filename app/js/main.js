@@ -132,6 +132,11 @@ $(function(){
         return (HandleSectionMenu.HandleAction('section.home', btnScrolling))
     })
 
+    $('.email-button-following').click(function(e){
+        e.stopPropagation()
+        $('.email-button-following').val('')
+    })
+
     btnShare.click(function(e){
         e.stopPropagation()
         if (!body.hasClass('slide-facebook-push')){
@@ -147,6 +152,7 @@ $(function(){
             body.removeClass('slide-twitter-push')
             body.removeClass('slide-facebook-push-following')
             body.removeClass('slide-twitter-push-following')
+            $('.email-button-following').val('enter email')
         }
 
     })
