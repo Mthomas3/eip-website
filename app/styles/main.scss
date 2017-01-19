@@ -80,8 +80,6 @@ h1, p{
 }
 
 @mixin setBar(){
-  position: relative;
-  top: 20%;
   color: black;
   height: 2px;
   width: 100%;
@@ -89,6 +87,10 @@ h1, p{
 
 .addBar{
   @include setBar();
+  margin-top: 80px;
+  margin-bottom: 80px;
+  background-color: black;
+  opacity: 0.2;
 }
 
 .contact{
@@ -100,4 +102,72 @@ h1, p{
   text-align: center;
   color: white;
   font-family: 'Open Sans', sans-serif;
+}
+
+@mixin addBarSharing(){
+  position: relative;
+  height: 2px;
+  width: 50px;
+  background-color: white;
+  opacity: 0.9;
+  top: 50%;
+  margin-top: -1px;
+  right: 0;
+  margin-left: auto;
+}
+
+.test-sentence{
+  position: absolute;
+  height: 100%;
+  right: 110px;
+  bottom: 0;
+  width: 150px;
+
+  .bar-follow-project-sentence {
+    @include addBarSharing();
+  }
+  .follow-project-sentence{
+    color: #CB0C54;
+    line-height: 50px;
+    position: relative;
+    right: 35px;
+  }
+}
+
+body{
+  background-color:white;
+}
+
+.image_content{
+  height: 350px;
+}
+
+@mixin addBarSharing-following(){
+  position: relative;
+  height: 2px;
+  width: 50px;
+  background-color: white;
+  opacity: 0.9;
+  top: 50%;
+  margin-top: -1px;
+  right: 0;
+  margin-left: auto;
+}
+
+.test-sentence-following{
+  position: absolute;
+  height: 100%;
+  right: 60px;
+  bottom: 0;
+  width: 150px;
+
+  .bar-follow-project-sentence-following {
+    @include addBarSharing-following();
+  }
+  .follow-project-sentence-following{
+    color: #CB0C54;
+    line-height: 50px;
+    position: relative;
+    right: 16px;
+  }
 }

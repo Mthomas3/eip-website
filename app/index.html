@@ -12,6 +12,7 @@
     <script src="js/handleTyped.js"></script>
     <link rel="stylesheet" href="styles/main.css">
     <title> Neo </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
 <div id="loader-wrapper">
@@ -52,9 +53,11 @@
             </button>
         </div>
         <div class="buttons-wrapper">
+            <div class="test-sentence">
+                <div class="bar-follow-project-sentence"></div>
+                <p class="follow-project-sentence"> partager le projet</p>
+            </div>
             <div class="buttons">
-                <div class="titles-button">
-                </div>
                 <!--<button id="share-button" type="button">
                     <i class="fa fa-share-alt" aria-hidden="true"></i>
                 </button>-->
@@ -67,6 +70,10 @@
             </div>
         </div>
         <div class="buttons-wrapper-following">
+            <div class="test-sentence-following">
+                <div class="bar-follow-project-sentence-following"></div>
+                <p class="follow-project-sentence-following"> suivre le projet</p>
+            </div>
             <div class="buttons-following">
                 <div class="titles-button">
                 </div>
@@ -97,40 +104,52 @@
 </section>
 <section class="about">
     <div class="container">
-        <div class="col-md-6">
-            <img class="resize-robot" src="images/robot-02.jpg" alt="">
-        </div>
-        <div class="col-md-6">
-            <div class="text-neo">
-                <h2> ABOUT NEO </h2>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                    industry's standard dummy text ever since the 1500s.</p>
-                <p>It has survived not only five centuries, but also the leap into electronic typesetting, remaining
-                    essentially unchanged.</p>
+        <div class="row">
+            <div class="col-md-6">
+                <img class="resize-robot" src="images/robot-02.jpg" alt="">
+            </div>
+            <div class="col-md-6">
+                <div class="text-neo">
+                    <h2> ABOUT NEO </h2>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
+                        the
+                        industry's standard dummy text ever since the 1500s.</p>
+                    <p>It has survived not only five centuries, but also the leap into electronic typesetting, remaining
+                        essentially unchanged.</p>
+                </div>
             </div>
         </div>
     </div>
 </section>
-<section class="content" id="content">
-    <div class="table">
-        <div class="col-md-6 three-part-section image_content" id="fot"></div>
-        <div class="col-md-6 three-part-section text-content">
+<section class="content container-fluid">
+    <div class="row">
+        <div class="col-xs-12 col-md-6 three-part-section image_content" id="fot"></div>
+        <div class="col-xs-12 col-md-6 three-part-section text-content">
             <div class="vertical-middle">
                 <div class="text-neo">
                     <div style="text-align: center;"><h2>Why do we use it?</h2></div>
                     <p>
-                        It is a long established fact that a reader will be distracted by the readable content of a page
-                        when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal
-                        distribution of letters, as opposed to using 'Content here, content here', making it look like
-                        readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as
-                        their default model text, and a search for 'lorem ipsum' will uncover many web sites still in
-                        their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on
+                        It is a long established fact that a reader will be distracted by the readable content of a
+                        page
+                        when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less
+                        normal
+                        distribution of letters, as opposed to using 'Content here, content here', making it look
+                        like
+                        readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum
+                        as
+                        their default model text, and a search for 'lorem ipsum' will uncover many web sites still
+                        in
+                        their infancy. Various versions have evolved over the years, sometimes by accident,
+                        sometimes on
                         purpose (injected humour and the like).
                     </p>
                 </div>
             </div>
         </div>
-        <div class="col-md-6 three-part-section text-content">
+    </div>
+    <div class="row">
+        <div class="col-xs-12 col-md-6 push-md-6 three-part-section image_content" id="sot"></div>
+        <div class="col-xs-12 col-md-6 pull-md-6 three-part-section text-content">
             <div class="text-neo">
                 <div style="text-align: center;"><h2>Why do we use it?</h2></div>
                 <p>
@@ -144,9 +163,10 @@
                 </p>
             </div>
         </div>
-        <div class="col-md-6 three-part-section image_content" id="sot"></div>
-        <div class="col-md-6 three-part-section image_content" id="tot"></div>
-        <div class="col-md-6 three-part-section text-content">
+    </div>
+    <div class="row">
+        <div class="col-xs-12 col-md-6 three-part-section image_content" id="tot"></div>
+        <div class="col-xs-12 col-md-6 three-part-section text-content">
             <div class="text-neo">
                 <div style="text-align: center;"><h2>Why do we use it?</h2></div>
                 <p>
@@ -189,7 +209,6 @@
         </div>
     </div>
 </section>
-</div>
 <section class="footer">
     <div class="container">
         <p class="text-footer">

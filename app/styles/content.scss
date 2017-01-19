@@ -2,8 +2,10 @@
 
 .three-part-section
 {
-  height: 350px;
-  display: table-cell;
+  @media (min-width: 992px) {
+    height: 350px;
+    display: table-cell;
+  }
 }
 
 .image_content{
