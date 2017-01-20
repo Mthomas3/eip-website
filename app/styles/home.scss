@@ -41,7 +41,7 @@
   .menu #trigger-overlay{
     position: absolute;
     top: 2em;
-    right: 2em;
+    left: 2em;
     height: 3.125em;
     width: 3.125em;
     overflow: hidden;
@@ -176,7 +176,7 @@
     nav {
       text-align: center;
       position: relative;
-      top: 50%;
+      top: 45%;
       height: 60%;
       -webkit-transform: translateY(-50%);
       transform: translateY(-50%);
@@ -192,7 +192,7 @@
         display: block;
         min-height: 54px;
         a {
-          font-size: 54px;
+          font-size: 30px;
           font-weight: 300;
           display: block;
           color: #CB0C54;
@@ -215,8 +215,10 @@
     -webkit-transition: width 0.5s 0.3s, visibility 0s 0.8s;
     transition: width 0.5s 0.3s, visibility 0s 0.8s;
     &.open {
+      position: absolute;
+      left: 10%;
       visibility: visible;
-      width: 100%;
+      width: 24%;
       -webkit-transition: width 0.5s;
       transition: width 0.5s;
     }
@@ -242,6 +244,8 @@
       }
     }
     &.close {
+      position: absolute;
+      left:10%;
       nav, .overlay-close {
         -webkit-transition-delay: 0s;
         transition-delay: 0s;
@@ -583,6 +587,35 @@
       right: -409px;
       transition: right 0.4s ease-in-out;
     }
+  }
+}
+@mixin addBarSharing-following(){
+  position: relative;
+  height: 2px;
+  width: 50px;
+  background-color: white;
+  opacity: 0.9;
+  top: 50%;
+  margin-top: -1px;
+  right: 0;
+  margin-left: auto;
+}
+
+.test-sentence-following{
+  position: absolute;
+  height: 100%;
+  right: 60px;
+  bottom: 0;
+  width: 150px;
+
+  .bar-follow-project-sentence-following {
+    @include addBarSharing-following();
+  }
+  .follow-project-sentence-following{
+    color: #CB0C54;
+    line-height: 50px;
+    position: relative;
+    right: 16px;
   }
 }
 
