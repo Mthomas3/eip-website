@@ -176,7 +176,7 @@
     nav {
       text-align: center;
       position: relative;
-      top: 45%;
+      top: 50%;
       height: 60%;
       -webkit-transform: translateY(-50%);
       transform: translateY(-50%);
@@ -192,10 +192,13 @@
         display: block;
         min-height: 54px;
         a {
-          font-size: 30px;
+          font-size: 35px;
           font-weight: 300;
           display: block;
           color: #CB0C54;
+        }
+        @media screen and (min-width: 480px){
+          font-size: 20px;
         }
         a:hover{
           transform: scale(1.5);
@@ -557,6 +560,7 @@
   }
 
 
+
   .slide-facebook-push-following #share-button-following{
     display: none;
   }
@@ -589,6 +593,7 @@
     }
   }
 }
+
 @mixin addBarSharing-following(){
   position: relative;
   height: 2px;
@@ -607,9 +612,18 @@
   right: 60px;
   bottom: 0;
   width: 150px;
-
+  animation: show-sentence 2s;
   .bar-follow-project-sentence-following {
     @include addBarSharing-following();
+  }
+  @keyframes show-sentence {
+    0%{
+      opacity: 0;
+    }
+    100%{
+      opacity: 1;
+    }
+
   }
   .follow-project-sentence-following{
     color: #CB0C54;

@@ -109,7 +109,7 @@ $(function(){
     }
 
     btnScrolling.click(function(){
-        return (HandleSectionMenu.HandleScrolling('section.content'))
+        return (HandleSectionMenu.HandleScrolling('section.about'))
     })
 
     btnMenuFooter.click(function(){
@@ -153,6 +153,7 @@ $(function(){
             body.removeClass('slide-facebook-push-following')
             body.removeClass('slide-twitter-push-following')
             $('.email-button-following').val('enter email')
+            $('.test-sentence-following').show()
         }
 
     })
@@ -162,6 +163,9 @@ $(function(){
         if (!body.hasClass('slide-facebook-push-following')){
             body.addClass('slide-facebook-push-following')
             body.addClass('slide-twitter-push-following')
+            $('.test-sentence-following').hide()
+            //body.addClass('overlay overlay-door close')
+
         }
     })
 
