@@ -14,7 +14,7 @@ if (document.fonts){
                 setTimeout(function(){
                     $('#loader-wrapper').hide()
                 }, 0)//2500)
-            }, 0)//)5000)
+            }, 0)//5000)
         })
 
     })

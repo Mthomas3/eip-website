@@ -424,14 +424,17 @@
 }
 
 @mixin createInput(){
-  height: 3.125em;
-  width: 300px;
-  overflow: hidden;
-  display: inline-block;
-  border: 1px solid #CB0C54;
-  border-color: hsla(337, 88%, 42%, 1);
-  background-color: transparent;
-  outline:none;
+
+  @media  screen and (min-width: 480px){
+    height: 3.125em;
+    width: 300px;
+    overflow: hidden;
+    display: inline-block;
+    border: 1px solid #CB0C54;
+    border-color: hsla(337, 88%, 42%, 1);
+    background-color: transparent;
+    outline:none;
+  }
 }
 
 @mixin setButtonShares(){
@@ -485,14 +488,18 @@
   }
 
   #twitter-button{
+    position: absolute;
     right: 0;
+    bottom: 0;
     transition: all .2s ease-in-out;
     @include createButton(2em, 2em);
     color:white;
   }
 
   #twitter-button-following{
-    right: 0;
+    position: absolute;
+    right: 360px;
+    bottom: 0;
     transition: all .2s ease-in-out;
     @include createButton(2em, 2em);
     color:white;
@@ -514,13 +521,23 @@
   }
 
   .email-button-following{
-    @include createInput();
-    background-color: white;
-    opacity: 0.5;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+   // @media  screen and (min-width: 480px) {
+    @media  screen and (min-width: 480px) {
+      @include createInput();
+      background-color: white;
+      opacity: 0.5;
+      display: block;
+    }
+    display: none;
   }
 
   #facebook-button{
-    right: 2em;
+    position: absolute;
+    right: 55px;
+    bottom: 0;
     //transition: all .2s ease-in-out;
     @include createButton(2em, 2em);
     color:white;
@@ -528,7 +545,9 @@
   }
 
   #facebook-button-following{
-    right: 2em;
+    position: absolute;
+    right: 305px;
+    bottom: 0;
     transition: all .2s ease-in-out;
     @include createButton(2em, 2em);
     color:white;
@@ -548,7 +567,13 @@
 
   .slide-facebook-push-following .buttons-wrapper-following{
     .buttons-following{
-      right: 0;
+      right: -305px;
+    }
+
+    @media screen and (min-width: 480px) {
+      .buttons-following{
+        right: 0;
+      }
     }
   }
 
@@ -573,6 +598,8 @@
     position: absolute;
     right: 2em;
     bottom: 2em;
+    height: 50px;
+    width: 300px;
 
    /* .buttons {
       position: relative;
@@ -585,10 +612,17 @@
     position: absolute;
     right: 2em;
     bottom: 5.5em;
+    height: 51px;
+    width: 37%;
     overflow: hidden;
     .buttons-following{
-      position: relative;
-      right: -409px;
+      position: absolute;
+      height: 50px;
+      width: 500px;
+      @media  screen and (min-width: 480px) {
+        right: -450px;
+      }
+      right: -450px;
       transition: right 0.4s ease-in-out;
     }
   }

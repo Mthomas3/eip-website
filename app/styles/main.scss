@@ -88,7 +88,7 @@ h1, p{
 .addBar{
   @include setBar();
   //margin-top: 80px;
-  margin-bottom: 60px;
+  margin-bottom: 40px;
   background-color: black;
   opacity: 0.2;
 }
@@ -105,9 +105,15 @@ h1, p{
 }
 
 @mixin addBarSharing(){
+
   position: relative;
   height: 2px;
   width: 50px;
+  visibility: hidden;
+  @media screen and (min-width: 480px){
+    width: 50px;
+    visibility: visible;
+  }
   background-color: white;
   opacity: 0.9;
   top: 50%;
@@ -121,7 +127,10 @@ h1, p{
   height: 100%;
   right: 110px;
   bottom: 0;
-  width: 150px;
+  width: 0px;
+  @media screen and (min-width: 480px){
+    width: 150px;
+  }
 
   .bar-follow-project-sentence {
     @include addBarSharing();
@@ -131,6 +140,12 @@ h1, p{
     line-height: 50px;
     position: relative;
     right: 35px;
+    visibility: hidden;
+    @media screen and (min-width: 480px){
+      font-size: 16px;
+      visibility: visible;
+      width: 150px;
+    }
   }
 }
 
@@ -140,6 +155,40 @@ body{
 
 .image_content{
   height: 350px;
+}
+
+@mixin addBarSharing-following(){
+  position: absolute;
+  height: 2px;
+  width: 50px;
+  background-color: white;
+  opacity: 0.9;
+  top: 50%;
+  margin-top: -1px;
+  right: 0;
+  margin-left: auto;
+}
+
+.test-sentence-following{
+  position: absolute;
+  height: 100%;
+  bottom: 0;
+  right: 60px;
+  width: 210px;
+  visibility: hidden;
+  .bar-follow-project-sentence-following {
+    @include addBarSharing-following();
+  }
+  .follow-project-sentence-following{
+    color: #CB0C54;
+    line-height: 50px;
+    position: relative;
+    right: 60px;
+    text-align: right;
+  }
+  @media  screen and (min-width: 480px){
+    visibility: visible;
+  }
 }
 
 .contact{
