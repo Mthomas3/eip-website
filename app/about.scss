@@ -1,0 +1,12 @@
+@import "utils";
+
+.about
+{
+  @include setContent();
+  @include smallSection();
+
+  .col-md-6
+  {
+    text-align: center;
+  }
+}

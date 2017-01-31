@@ -7,7 +7,7 @@ if (document.fonts){
             $('#trigger-overlay').hide()
             setTimeout(function(){
                 $('#typing_text').hide()
-                $('body').addClass('loaded')
+                /*$('body').addClass('loaded')*/
                 $('#trigger-overlay').show()
                 $('#share-button').show()
                 $('#following-button').show()

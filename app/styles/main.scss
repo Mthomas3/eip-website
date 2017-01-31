@@ -10,8 +10,8 @@
 @font-face { font-family: Delicious; src: url('font/BalooThambi-Regular.ttf') format("truetype"); }
 
 /* icon */
-@import url(http://weloveiconfonts.com/api/?family=fontawesome);
-@import url(http://weloveiconfonts.com/api/?family=entypo);
+@import url(font/font-icons.css);
+@import url(font/font-icons-2.css);
 
 html {
   height: 100%;
@@ -87,7 +87,6 @@ h1, p{
 
 .addBar{
   @include setBar();
-  //margin-top: 80px;
   margin-bottom: 40px;
   background-color: black;
   opacity: 0.2;
@@ -136,13 +135,13 @@ h1, p{
     @include addBarSharing();
   }
   .follow-project-sentence{
-    color: #CB0C54;
+    color: #006dc3;
     line-height: 50px;
     position: relative;
-    right: 35px;
+    right: 48px;
     visibility: hidden;
     @media screen and (min-width: 480px){
-      font-size: 16px;
+      font-size: 18px;
       visibility: visible;
       width: 150px;
     }
@@ -180,7 +179,8 @@ body{
     @include addBarSharing-following();
   }
   .follow-project-sentence-following{
-    color: #CB0C54;
+    color: #006dc3;
+    font-size: 18px;
     line-height: 50px;
     position: relative;
     right: 60px;
@@ -193,4 +193,58 @@ body{
 
 .contact{
   margin-bottom: 40px;
+}
+
+.titles-neo-content{
+  text-align: center;
+  margin-top: 10px;
+}
+
+.titles-neo-content-about{
+  margin-top: 10px;
+  text-align: center;
+}
+
+.text-neo-content {
+  font-size: 2.2vh;
+  margin-top: 20px;
+}
+
+.text-footer{
+  padding-top: 5px;
+  margin-bottom: 2px;
+  text-align: center;
+  font-size: 2vh;
+  color: #adabab;
+}
+
+.contact{
+  font-size:2vh;
+  text-align: center;
+}
+
+.text-neo{
+  margin-bottom: 20px;
+}
+
+.home{
+  margin-bottom: 20px;
+}
+
+.about{
+  margin-bottom: 20px;
+}
+
+.text-neo{
+  font-family: 'Roboto', sans-serif;
+}
+
+.text-neo-content{
+  font-family: 'Roboto', sans-serif;
+}
+
+.home:after{
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.2);
 }
