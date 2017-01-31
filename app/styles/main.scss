@@ -132,18 +132,31 @@ h1, p{
   }
 
   .bar-follow-project-sentence {
-    @include addBarSharing();
+    @media screen and (min-width: 720px){
+      visibility: visible;
+    }
+    position: absolute;
+    height: 2px;
+    width: 50px;
+    background-color: white;
+    opacity: 0.9;
+    top: 50%;
+    margin-top: -1px;
+    right: 0;
+    margin-left: auto;
+    visibility: hidden;
   }
   .follow-project-sentence{
     color: #006dc3;
     line-height: 50px;
     position: relative;
-    right: 48px;
+    right: 70px;
     visibility: hidden;
-    @media screen and (min-width: 480px){
-      font-size: 18px;
+    @media screen and (min-width: 720px){
+      font-size: 20px;
       visibility: visible;
-      width: 150px;
+      width: 175px;
+      -webkit-text-stroke: 0.5px white;
     }
   }
 }
@@ -157,15 +170,16 @@ body{
 }
 
 @mixin addBarSharing-following(){
-  position: absolute;
-  height: 2px;
-  width: 50px;
-  background-color: white;
-  opacity: 0.9;
-  top: 50%;
-  margin-top: -1px;
-  right: 0;
-  margin-left: auto;
+
+    position: absolute;
+    height: 2px;
+    width: 50px;
+    background-color: white;
+    opacity: 0.9;
+    top: 50%;
+    margin-top: -1px;
+    right: 0;
+    margin-left: auto;
 }
 
 .test-sentence-following{
@@ -180,13 +194,15 @@ body{
   }
   .follow-project-sentence-following{
     color: #006dc3;
-    font-size: 18px;
+    font-size: 20px;
     line-height: 50px;
     position: relative;
     right: 60px;
     text-align: right;
+    -webkit-text-stroke: 0.5px white;
+
   }
-  @media  screen and (min-width: 480px){
+  @media  screen and (min-width: 720px){
     visibility: visible;
   }
 }
