@@ -52,7 +52,7 @@
   }
 }
 
-@mixin createButton($bottom, $right, $height, $width){
+@mixin createButton($bottom, $right, $height, $width) {
   height: $height;
   width: $width;
   overflow: hidden;
@@ -78,7 +78,7 @@
   }
 }
 
-@mixin addIconsToButton(){
+@mixin addIconsToButton() {
   [class*="entypo-"]:before {
     font-family: 'entypo', sans-serif;
   }
@@ -215,7 +215,7 @@
     bottom: 2em;
     height: 50px;
     width: 50px;
-    @media  screen and (min-width: 480px){
+    @media screen and (min-width: 480px) {
       width: 300px;
     }
   }
@@ -252,7 +252,7 @@
   margin-left: auto;
 }
 
-@mixin setBarTextFollowing(){
+@mixin setBarTextFollowing() {
   .text-bar-following {
     position: absolute;
     height: 100%;
@@ -264,7 +264,7 @@
     .bar-follow-project-sentence-following {
       @include addBarSharing-following(2px, 50px);
     }
-    .follow-project-sentence-following{
+    .follow-project-sentence-following {
       color: #006dc3;
       font-size: 150%;
       line-height: 50px;
@@ -273,7 +273,7 @@
       text-align: right;
       -webkit-text-stroke: 0.5px white;
     }
-    @media  screen and (min-width: 720px){
+    @media screen and (min-width: 720px) {
       visibility: visible;
     }
     @keyframes show-sentence {
@@ -294,27 +294,34 @@
 
 @mixin setTitlesHome {
   .titles-neo {
+    @media screen and (min-width: 480px) {
+      text-align: center;
+      padding-top: 10rem;
+      font-size: 85px;
+      color: #006dc3;
+      -webkit-text-stroke: 2px white;
+    }
     text-align: center;
     padding-top: 10rem;
-    font-size: 85px;
-    color: #006dc3;
+    font-size: 7vh;
+    color:  #006dc3;
     -webkit-text-stroke: 2px white;
   }
 }
 
-@mixin setBarTextSharing(){
-  .test-sentence{
+@mixin setBarTextSharing() {
+  .test-sentence {
     position: absolute;
     height: 100%;
     right: 110px;
     bottom: 0;
     width: 0px;
-    @media screen and (min-width: 480px){
+    @media screen and (min-width: 480px) {
       width: 150px;
     }
 
     .bar-follow-project-sentence {
-      @media screen and (min-width: 720px){
+      @media screen and (min-width: 720px) {
         visibility: visible;
       }
       position: absolute;
@@ -328,7 +335,7 @@
       margin-left: auto;
       visibility: hidden;
     }
-    .follow-project-sentence{
+    .follow-project-sentence {
       position: relative;
       width: 200px;
       right: 100px;
