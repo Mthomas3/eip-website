@@ -3,11 +3,17 @@ $(function(){
     const body = $('body')
     const emailButtonFollowing = $('.email-button-following')
     const textBarFollowing = $('.text-bar-following')
+    const btnScrolling = $('.scroll-down')
 
 
     emailButtonFollowing.click(function(e){
         e.stopPropagation()
         emailButtonFollowing.val('')
+    })
+
+    btnScrolling.click(function(){
+        $('html, body').animate({scrollTop: $('.about').offset().top}, 'slow');
+        return false;
     })
 
     btnShare.click(function(e){
