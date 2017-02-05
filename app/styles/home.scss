@@ -322,27 +322,32 @@
 
     .bar-follow-project-sentence {
       @media screen and (min-width: 720px) {
+        position: absolute;
+        height: 2px;
+        width: 50px;
+        background-color: white;
+        opacity: 0.9;
+        top: 50%;
+        margin-top: -1px;
+        right: 0;
+        margin-left: auto;
         visibility: visible;
       }
-      position: absolute;
-      height: 2px;
-      width: 50px;
-      background-color: white;
-      opacity: 0.9;
-      top: 50%;
-      margin-top: -1px;
-      right: 0;
-      margin-left: auto;
-      visibility: hidden;
+      visibility: visible;
+
     }
     .follow-project-sentence {
-      position: relative;
-      width: 200px;
-      right: 100px;
-      line-height: 50px;
-      color: #006dc3;
-      font-size: 150%;
-      -webkit-text-stroke: 0.5px white;
+      @media screen and (min-width: 720px){
+        position: relative;
+        width: 200px;
+        right: 100px;
+        line-height: 50px;
+        color: #006dc3;
+        font-size: 150%;
+        -webkit-text-stroke: 0.5px white;
+        visibility: visible;
+      }
+      visibility: hidden;
     }
   }
 }
