@@ -1,12 +1,10 @@
 @import 'home.scss';
 @import 'content.scss';
-@import 'skills.scss';
-@import 'about.scss';
 @import 'footer.scss';
+@import 'about.scss';
 @import 'contact.scss';
 
 //todo different supports, font-face need to be fixed!
-
 @font-face { font-family: Delicious; src: url('font/BalooThambi-Regular.ttf') format("truetype"); }
 
 /* icon */
@@ -20,247 +18,35 @@ html {
 body{
   height: 100%;
   width:100%;
-  background-color: #2B2B2B;
-  font-family: Delicious;
-}
-
-button{
-  background-color: transparent;
-}
-
-*,
-:after,
-:before {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
 }
 
 section {
-  //height: 100vh;
   width: 100%;
 }
 
-h1, p{
-  color:black ;
-}
-
 .home{
-  height: 100vh;
   @include setSectionHome();
 }
 
-.content{
-  @include setContent();
+.about{
+  @include setAbout();
 }
 
-.skills{
-  @include setSkills();
+.contact{
+  @include setContact();
 }
 
 .footer{
   @include setFooter();
 }
 
-@include setLoader();
+.content{
+  @include setContent();
+}
 
+/* todo has to be fixed */
 @include setButtonShares();
 
-.resize-robot{
-  display: block;
-  max-width: 100%;
-  max-height: 300px;
-  margin: 0 auto;
-}
-
-.text-neo{
-  text-align: left;
-  font-weight: normal;
-  font-family: 'Open Sans', sans-serif;
-}
-
-@mixin setBar(){
-  color: black;
-  height: 2px;
-  width: 100%;
-}
-
-.addBar{
-  @include setBar();
-  margin-bottom: 40px;
-  background-color: black;
-  opacity: 0.2;
-}
-
-.contact{
-  text-align: center;
-  font-family: 'Open Sans', sans-serif;
-}
-
-.text-footer{
-  text-align: center;
-  color: white;
-  font-family: 'Open Sans', sans-serif;
-}
-
-@mixin addBarSharing(){
-
-  position: relative;
-  height: 2px;
-  width: 50px;
-  visibility: hidden;
-  @media screen and (min-width: 480px){
-    width: 50px;
-    visibility: visible;
-  }
+body {
   background-color: white;
-  opacity: 0.9;
-  top: 50%;
-  margin-top: -1px;
-  right: 0;
-  margin-left: auto;
-}
-
-.test-sentence{
-  position: absolute;
-  height: 100%;
-  right: 110px;
-  bottom: 0;
-  width: 0px;
-  @media screen and (min-width: 480px){
-    width: 150px;
-  }
-
-  .bar-follow-project-sentence {
-    @media screen and (min-width: 720px){
-      visibility: visible;
-    }
-    position: absolute;
-    height: 2px;
-    width: 50px;
-    background-color: white;
-    opacity: 0.9;
-    top: 50%;
-    margin-top: -1px;
-    right: 0;
-    margin-left: auto;
-    visibility: hidden;
-  }
-  .follow-project-sentence{
-    color: #006dc3;
-    line-height: 50px;
-    position: relative;
-    right: 70px;
-    visibility: hidden;
-    @media screen and (min-width: 720px){
-      font-size: 20px;
-      visibility: visible;
-      width: 175px;
-      -webkit-text-stroke: 0.5px white;
-    }
-  }
-}
-
-body{
-  background-color:white;
-}
-
-.image_content{
-  height: 350px;
-}
-
-@mixin addBarSharing-following(){
-
-    position: absolute;
-    height: 2px;
-    width: 50px;
-    background-color: white;
-    opacity: 0.9;
-    top: 50%;
-    margin-top: -1px;
-    right: 0;
-    margin-left: auto;
-}
-
-.test-sentence-following{
-  position: absolute;
-  height: 100%;
-  bottom: 0;
-  right: 60px;
-  width: 210px;
-  visibility: hidden;
-  .bar-follow-project-sentence-following {
-    @include addBarSharing-following();
-  }
-  .follow-project-sentence-following{
-    color: #006dc3;
-    font-size: 20px;
-    line-height: 50px;
-    position: relative;
-    right: 60px;
-    text-align: right;
-    -webkit-text-stroke: 0.5px white;
-
-  }
-  @media  screen and (min-width: 720px){
-    visibility: visible;
-  }
-}
-
-.contact{
-  margin-bottom: 40px;
-}
-
-.titles-neo-content{
-  text-align: center;
-  margin-top: 10px;
-}
-
-.titles-neo-content-about{
-  margin-top: 10px;
-  text-align: center;
-}
-
-.text-neo-content {
-  font-size: 2.2vh;
-  margin-top: 20px;
-}
-
-.text-footer{
-  padding-top: 5px;
-  margin-bottom: 2px;
-  text-align: center;
-  font-size: 2vh;
-  color: #adabab;
-}
-
-.contact{
-  font-size:2vh;
-  text-align: center;
-}
-
-.text-neo{
-  margin-bottom: 20px;
-}
-
-.home{
-  margin-bottom: 20px;
-}
-
-.about{
-  margin-bottom: 20px;
-}
-
-.text-neo{
-  font-family: 'Roboto', sans-serif;
-}
-
-.text-neo-content{
-  font-family: 'Roboto', sans-serif;
-}
-
-.home:after{
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.2);
 }

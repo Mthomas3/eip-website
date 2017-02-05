@@ -1,6 +1,11 @@
-@import "utils";
-
-.contact{
-  @include smallSection();
-  @include setContent();
+@mixin setContact(){
+  .contact{
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+  }
+  margin-bottom: 40px;
+  .contact{
+    font-size:2vh;
+    text-align: center;
+  }
 }

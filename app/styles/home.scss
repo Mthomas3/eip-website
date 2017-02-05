@@ -1,106 +1,8 @@
-@mixin setMenu() {
-
-  #trigger-overlay {
-    cursor: pointer;
-  }
-
-  .menu #trigger-overlay .menuicon {
-    position: relative;
-    display: inline-block;
-    background-color: transparent;
-  }
-
-  .menu #trigger-overlay .bar1, .bar2, .bar3 {
-    width: 20px;
-    height: 2px;
-    background-color: #006dc3;
-    margin: 2px 0;
-    transition: 0.4s;
-
-  }
-  .change .bar1 {
-    -webkit-transform: rotate(-45deg) translate(-2px, 2px);
-    transform: rotate(-45deg) translate(-2px, 2px);
-  }
-
-  .change .bar2 {
-    opacity: 0;
-  }
-
-  .change .bar3 {
-    -webkit-transform: rotate(45deg) translate(-2px, -2px);
-    transform: rotate(45deg) translate(-4px, -4px);
-  }
-
-  .change .menuicon {
-    top: 2px;
-  }
-
-  .menu #trigger-overlay:focus {
-    outline: none;
-  }
-
-  .menu #trigger-overlay {
-    position: absolute;
-    top: 2em;
-    left: 2em;
-    height: 3.125em;
-    width: 3.125em;
-    overflow: hidden;
-    z-index: 152;
-    display: block;
-    border: 1px solid #006dc3;
-    border-color: hsla(206, 100%, 38%, 1);
-    background-color: transparent;
-    transition: border-color 0.25s linear;
-  }
-  .menu #trigger-overlay:hover {
-    border: 1px solid #006dc3;
-    border-color: hsla(206, 100%, 38%, 1);
-  }
-  .menu-button {
-    position: relative;
-    top: -3em;
-    opacity: 0;
-  }
-
-  .home-menu-button {
-    transition: opacity .75s cubic-bezier(.165, .84, .44, 1) .4s,
-    top .75s cubic-bezier(.165, .84, .44, 1) .4s,
-    transform .2s cubic-bezier(.165, .84, .44, 1);
-  }
-
-  .content-menu-button {
-    transition: opacity .75s cubic-bezier(.165, .84, .44, 1) .6s,
-    top .75s cubic-bezier(.165, .84, .44, 1) .6s,
-    transform .2s cubic-bezier(.165, .84, .44, 1);
-  }
-
-  .skills-menu-button {
-    transition: opacity .75s cubic-bezier(.165, .84, .44, 1) .8s,
-    top .75s cubic-bezier(.165, .84, .44, 1) .8s,
-    transform .2s cubic-bezier(.165, .84, .44, 1);
-  }
-
-  .footer-menu-button {
-    transition: opacity .75s cubic-bezier(.165, .84, .44, 1) 1s,
-    top .75s cubic-bezier(.165, .84, .44, 1) 1s,
-    transform .2s cubic-bezier(.165, .84, .44, 1);
-  }
-
-  .overlay.open .menu-button {
-    top: 0;
-    opacity: 1;
-  }
-}
-
 @mixin setButtonScrolling() {
-
   .scroll-down:hover a span {
     border-left: 6px solid white;
     border-bottom: 6px solid white;
   }
-
   .scroll-down a {
     position: absolute;
     left: 50%;
@@ -109,7 +11,6 @@
     padding: 40px 20px;
     cursor: pointer;
   }
-
   .scroll-down a span {
     position: absolute;
     width: 24px;
@@ -123,7 +24,6 @@
     animation: sdb06 1.5s infinite;
     box-sizing: border-box;
   }
-
   @-webkit-keyframes sdb06 {
     0% {
       -webkit-transform: rotateY(0) rotateZ(-45deg) translate(0, 0);
@@ -152,282 +52,9 @@
   }
 }
 
-@mixin setButtonMenu() {
-  .overlay {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background: white;
-    opacity: 0.95;
-    .overlay-close {
-      width: 80px;
-      height: 80px;
-      position: absolute;
-      right: 39px;
-      top: 20px;
-      overflow: hidden;
-      border: none;
-      text-indent: 200%;
-      color: transparent;
-      outline: none;
-      z-index: 100;
-    }
-    nav {
-      text-align: center;
-      position: relative;
-      top: 50%;
-      height: 60%;
-      -webkit-transform: translateY(-50%);
-      transform: translateY(-50%);
-    }
-    ul {
-      list-style: none;
-      padding: 0;
-      margin: 0 auto;
-      display: inline-block;
-      text-align: center;
-      height: 100%;
-      position: relative;
-      li {
-        display: block;
-        min-height: 30px;
-        margin-left: 35%;
-        @media  screen and (min-width: 480px){
-          min-height: 54px;
-          margin-left: 0%;
-        }
-        a {
-          @media  screen and (min-width: 480px){
-            font-size: 3vw;
-          }
-          font-size: 20px;
-          font-weight: 300;
-          display: block;
-          color: #006dc3;
-        }
-        @media screen and (min-width: 480px) {
-          font-size: 20px;
-        }
-        a:hover {
-          transform: scale(1.5);
-          background-color: transparent;
-          text-decoration: none;
-        }
-      }
-    }
-  }
-
-  .overlay-door {
-    visibility: hidden;
-    width: 0;
-    left: 50%;
-    /*-webkit-transform: translateX(-50%);
-    transform: translateX(-50%);*/
-    -webkit-transition: width 0.5s 0.3s, visibility 0s 0.8s;
-    transition: width 0.5s 0.3s, visibility 0s 0.8s;
-    &.open {
-      position: absolute;
-      left: 0;
-      visibility: visible;
-      width: 100%;
-      @media screen and (min-width: 720px) {
-        width: 20%;
-      }
-      -webkit-transition: width 0.5s;
-      transition: width 0.5s;
-    }
-    nav {
-      position: absolute;
-      left: -5%;
-      @media screen and (min-width: 720px) {
-        left: 0;
-      }
-      width: 100%;
-      opacity: 0;
-      -webkit-transition: opacity 0.3s 0.5s;
-      transition: opacity 0.3s 0.5s;
-    }
-    .overlay-close {
-      opacity: 0;
-      -webkit-transition: opacity 0.3s 0.5s;
-      transition: opacity 0.3s 0.5s;
-    }
-    &.open {
-      nav, .overlay-close {
-        opacity: 1;
-        -webkit-transition-delay: 0.5s;
-        transition-delay: 0.5s;
-      }
-    }
-    &.close {
-      position: absolute;
-      left: 0%;
-      nav, .overlay-close {
-        -webkit-transition-delay: 0s;
-        transition-delay: 0s;
-      }
-    }
-  }
-
-  @media screen and (max-height: 30.5em) {
-    .overlay {
-      nav {
-        height: 70%;
-        font-size: 34px;
-      }
-      ul li {
-        min-height: 34px;
-
-
-      }
-    }
-  }
-}
-
-@mixin loader-bar($position, $delay) {
-  position: absolute;
-  left: $position;
-  top: 1%;
-  height: 0%;
-  width: 2px;
-  background-color: white;
-  z-index: 2;
-  opacity: 0.05;
-  animation: animate-bar 6s;
-  animation-delay: $delay;
-}
-
-@mixin setLoader() {
-  #loader-wrapper {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-  }
-
-  #loader-wrapper .loader-section {
-    position: fixed;
-    top: 0;
-    width: 51%;
-    height: 100%;
-    background: #0C151E;
-    z-index: 1;
-    -webkit-transform: translateX(0);
-    -ms-transform: translateX(0);
-    transform: translateX(0);
-    &.section-left {
-      left: 0;
-    }
-    &.section-right {
-      right: 0;
-    }
-  }
-
-  .loaded {
-    #loader {
-      opacity: 0;
-      -webkit-transition: all 0.3s ease-out;
-      transition: all 0.3s ease-out;
-    }
-    #loader-wrapper {
-      animation: hide-background 8s forwards;
-    }
-  }
-
-  @keyframes hide-background {
-    0% {
-      opacity: 1;
-    }
-    100% {
-      opacity: 0;
-      visibility: hidden;
-    }
-  }
-
-  .no-js {
-    #loader-wrapper {
-      display: none;
-    }
-    h1 {
-      color: #222222;
-    }
-  }
-
-  .no-scrolling {
-    /*overflow: hidden;*/
-  }
-
-  .loading-bar {
-    position: absolute;
-    top: 0;
-    height: 0.5%;
-    width: 0.1%;
-    background-color: #CB3B3B;
-    z-index: 2;
-    animation: bar-load 8s;
-  }
-
-  @keyframes bar-load {
-    0% {
-      width: 0.1%;
-    }
-    50% {
-      width: 50%;
-    }
-    100% {
-      width: 100%;
-    }
-  }
-
-  #typing_text {
-    position: relative;
-    padding-top: 10rem;
-    text-align: center;
-    font-family: Delicious;
-    font-size: 50px;
-    color: white;
-    z-index: 3;
-    opacity: 0.6;
-  }
-
-  .bar-load-1 {
-    @include loader-bar(16.6%, 2s);
-  }
-
-  .bar-load-2 {
-    @include loader-bar(33.2%, 1s);
-  }
-
-  .bar-load-3 {
-    @include loader-bar(49.8%, 3s);
-  }
-
-  .bar-load-4 {
-    @include loader-bar(66.4%, 2s);
-  }
-
-  .bar-load-5 {
-    @include loader-bar(83%, 1s);
-  }
-
-  @keyframes animate-bar {
-    0% {
-      height: 0%;
-    }
-
-    100% {
-      height: 100%;
-    }
-  }
-}
-
-@mixin createButton($bottom, $right) {
-  height: 3.125em;
-  width: 3.125em;
+@mixin createButton($bottom, $right, $height, $width){
+  height: $height;
+  width: $width;
   overflow: hidden;
   z-index: 152;
   display: inline-block;
@@ -438,11 +65,10 @@
   outline: none;
 }
 
-@mixin createInput() {
-
+@mixin createInput($height, $width) {
   @media screen and (min-width: 480px) {
-    height: 3.125em;
-    width: 300px;
+    height: $height;
+    width: $width;
     overflow: hidden;
     display: inline-block;
     border: 1px solid #006dc3;
@@ -452,40 +78,7 @@
   }
 }
 
-@mixin setButtonShares() {
-
-  #following-button:hover {
-    background-color: #006dc3;
-  }
-
-  #share-button:hover {
-    background-color: #006dc3;
-  }
-  #share-button-following:hover, #twitter-button-following:hover, #facebook-button-following:hover {
-    background-color: #006dc3;
-  }
-  .email-button-following:hover, .email-button-following:focus {
-
-    background-color: white;
-    opacity: 0.8;
-    color: black;
-  }
-
-  .email-button-following {
-    background-color: white;
-  }
-
-  .email-button-following {
-    text-align: center;
-  }
-
-  #facebook-button:hover,
-  #facebook-button.active,
-  #twitter-button:hover,
-  #twitter-button.active {
-    background-color: #006dc3;
-  }
-
+@mixin addIconsToButton(){
   [class*="entypo-"]:before {
     font-family: 'entypo', sans-serif;
   }
@@ -493,12 +86,37 @@
   [class*="fontawesome-"]:before {
     font-family: 'FontAwesome', sans-serif;
   }
+}
+
+@mixin setButtonShares() {
+
+  #following-button:hover,
+  #share-button:hover,
+  #facebook-button:hover,
+  #facebook-button.active,
+  #twitter-button:hover,
+  #twitter-button.active,
+  #share-button-following:hover,
+  #twitter-button-following:hover,
+  #facebook-button-following:hover {
+    background-color: #006dc3;
+  }
+
+  .email-button-following:hover, .email-button-following:focus {
+    background-color: white;
+    opacity: 0.8;
+    color: black;
+  }
+
+  .email-button-following {
+    background-color: white;
+    text-align: center;
+  }
+
+  @include addIconsToButton();
 
   #following-button {
-    @include createButton(5.5em, 2em);
-    .fontawesome-plus {
-      color: white;
-    }
+    @include createButton(5.5em, 2em, 3.125em, 3.125em);
   }
 
   #twitter-button {
@@ -506,7 +124,7 @@
     right: 0;
     bottom: 0;
     transition: all .2s ease-in-out;
-    @include createButton(2em, 2em);
+    @include createButton(2em, 2em, 3.125em, 3.125em);
     color: white;
   }
 
@@ -515,19 +133,12 @@
     right: 360px;
     bottom: 0;
     transition: all .2s ease-in-out;
-    @include createButton(2em, 2em);
+    @include createButton(2em, 2em, 3.125em, 3.125em);
     color: white;
   }
 
-  #share-button {
-    @include createButton(2em, 2em);
-    .fa {
-      font-size: 1em;
-      color: white;
-    }
-  }
-  #share-button-following {
-    @include createButton(2em, 2em);
+  #share-button, #share-button-following {
+    @include createButton(2em, 2em, 3.125em, 3.125em);
     .fa {
       font-size: 1em;
       color: white;
@@ -538,9 +149,8 @@
     position: absolute;
     right: 0;
     bottom: 0;
-    // @media  screen and (min-width: 480px) {
     @media screen and (min-width: 480px) {
-      @include createInput();
+      @include createInput(3.125em, 300px);
       background-color: white;
       opacity: 0.5;
       display: block;
@@ -552,10 +162,8 @@
     position: absolute;
     right: 55px;
     bottom: 0;
-    //transition: all .2s ease-in-out;
-    @include createButton(2em, 2em);
+    @include createButton(2em, 2em, 3.125em, 3.125em);
     color: white;
-
   }
 
   #facebook-button-following {
@@ -563,7 +171,7 @@
     right: 305px;
     bottom: 0;
     transition: all .2s ease-in-out;
-    @include createButton(2em, 2em);
+    @include createButton(2em, 2em, 3.125em, 3.125em);
     color: white;
   }
 
@@ -597,12 +205,7 @@
       bottom: 2em;
     }
   }
-
   .slide-facebook-push-following #share-button-following {
-    display: none;
-  }
-
-  .slide-facebook-push #share-button {
     display: none;
   }
 
@@ -612,16 +215,9 @@
     bottom: 2em;
     height: 50px;
     width: 50px;
-
     @media  screen and (min-width: 480px){
       width: 300px;
     }
-
-    /* .buttons {
-       position: relative;
-       right: -3.3em * 2;
-       transition: right 0.4s ease-in-out;
-     }*/
   }
 
   .buttons-wrapper-following {
@@ -644,10 +240,10 @@
   }
 }
 
-@mixin addBarSharing-following() {
-  position: relative;
-  height: 2px;
-  width: 50px;
+@mixin addBarSharing-following($height, $width) {
+  position: absolute;
+  height: $height;
+  width: $width;
   background-color: white;
   opacity: 0.9;
   top: 50%;
@@ -656,30 +252,43 @@
   margin-left: auto;
 }
 
-.test-sentence-following {
-  position: absolute;
-  height: 100%;
-  right: 60px;
-  bottom: 0;
-  width: 150px;
-  animation: show-sentence 2s;
-  .bar-follow-project-sentence-following {
-    @include addBarSharing-following();
-  }
-  @keyframes show-sentence {
-    0% {
-      opacity: 0;
+@mixin setBarTextFollowing(){
+  .text-bar-following {
+    position: absolute;
+    height: 100%;
+    right: 60px;
+    width: 210px;
+    bottom: 0;
+    visibility: hidden;
+    animation: show-sentence 2s;
+    .bar-follow-project-sentence-following {
+      @include addBarSharing-following(2px, 50px);
     }
-    100% {
-      opacity: 1;
+    .follow-project-sentence-following{
+      color: #006dc3;
+      font-size: 150%;
+      line-height: 50px;
+      position: relative;
+      right: 60px;
+      text-align: right;
+      -webkit-text-stroke: 0.5px white;
     }
-
-  }
-  .follow-project-sentence-following {
+    @media  screen and (min-width: 720px){
+      visibility: visible;
+    }
+    @keyframes show-sentence {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+    .follow-project-sentence-following {
       color: #006dc3;
       line-height: 50px;
       position: relative;
-      right: 16px;
+    }
   }
 }
 
@@ -687,17 +296,59 @@
   .titles-neo {
     text-align: center;
     padding-top: 10rem;
-    font-size: 6vw;
+    font-size: 85px;
     color: #006dc3;
-    -webkit-text-stroke: 1px white;
+    -webkit-text-stroke: 2px white;
+  }
+}
+
+@mixin setBarTextSharing(){
+  .test-sentence{
+    position: absolute;
+    height: 100%;
+    right: 110px;
+    bottom: 0;
+    width: 0px;
+    @media screen and (min-width: 480px){
+      width: 150px;
+    }
+
+    .bar-follow-project-sentence {
+      @media screen and (min-width: 720px){
+        visibility: visible;
+      }
+      position: absolute;
+      height: 2px;
+      width: 50px;
+      background-color: white;
+      opacity: 0.9;
+      top: 50%;
+      margin-top: -1px;
+      right: 0;
+      margin-left: auto;
+      visibility: hidden;
+    }
+    .follow-project-sentence{
+      position: relative;
+      width: 200px;
+      right: 100px;
+      line-height: 50px;
+      color: #006dc3;
+      font-size: 150%;
+      -webkit-text-stroke: 0.5px white;
+    }
   }
 }
 
 @mixin setSectionHome() {
+
+  height: 100vh;
+  font-family: Delicious;
   background-image: url('../images/family-image.png');
   background-size: cover;
   @include setButtonScrolling();
-  @include setMenu();
-  @include setButtonMenu();
   @include setTitlesHome();
+  @include setBarTextFollowing();
+  @include setBarTextSharing();
+  margin-bottom: 20px;
 }

@@ -51,3 +51,44 @@
 {
   @include whiteText();
 }
+
+@mixin setBar(){
+  color: black;
+  height: 2px;
+  width: 100%;
+}
+
+.addBar{
+  @include setBar();
+  margin-bottom: 40px;
+  background-color: black;
+  opacity: 0.2;
+}
+
+@mixin setTitlesContent(){
+  .titles-neo-content{
+    text-align: center;
+    margin-top: 10px;
+  }
+}
+@mixin sizeImageContent(){
+  .image_content{
+    height: 350px;
+  }
+}
+@mixin setTextContent(){
+  .text-neo-content {
+    font-size: 2.2vh;
+    margin-top: 20px;
+    text-align: justify;
+    font-weight: normal;
+  }
+}
+
+@mixin setContent(){
+  background-color: #FFFFFF;
+  @include sizeImageContent();
+  @include setTitlesContent();
+  @include setTextContent();
+
+}

@@ -1,12 +1,30 @@
-@import "utils";
+@mixin resizePicture(){
+  .resizeAboutPicture {
+    display: block;
+    max-width: 100%;
+    max-height: 300px;
+    margin: 0 auto;
+  }
+}
 
-.about
-{
-  @include setContent();
-  @include smallSection();
+@mixin aboutContent(){
+  .text-neo{
+    text-align: left;
+    font-weight: normal;
+    font-family: 'Open Sans', sans-serif;
+  }
+}
 
-  .col-md-6
-  {
+@mixin setTitlesAbout(){
+  .titles-neo-content-about{
+    margin-top: 10px;
     text-align: center;
   }
+}
+
+@mixin setAbout(){
+  @include resizePicture();
+  @include aboutContent();
+  @include setTitlesAbout();
+  margin-bottom: 20px;
 }
