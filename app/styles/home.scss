@@ -1,366 +1,152 @@
-@mixin setButtonScrolling() {
-  .scroll-down:hover a span {
-    border-left: 6px solid white;
-    border-bottom: 6px solid white;
-  }
-  .scroll-down a {
-    position: absolute;
-    left: 50%;
-    margin-left: -20px;
-    bottom: 10%;
-    padding: 40px 20px;
-    cursor: pointer;
-  }
-  .scroll-down a span {
-    position: absolute;
-    width: 24px;
-    height: 24px;
-    margin-left: -12px;
-    border-left: 6px solid #006dc3;
-    border-bottom: 6px solid #006dc3;
-    -webkit-transform: rotateZ(-45deg);
-    transform: rotateZ(-45deg);
-    -webkit-animation: sdb06 2.5s infinite;
-    animation: sdb06 1.5s infinite;
-    box-sizing: border-box;
-  }
-  @-webkit-keyframes sdb06 {
-    0% {
-      -webkit-transform: rotateY(0) rotateZ(-45deg) translate(0, 0);
-      opacity: 0;
-    }
-    50% {
-      opacity: 1;
-    }
-    100% {
-      -webkit-transform: rotateY(720deg) rotateZ(-45deg) translate(-20px, 20px);
-      opacity: 0;
-    }
-  }
-  @keyframes sdb06 {
-    0% {
-      transform: rotateY(0) rotateZ(-45deg) translate(0, 0);
-      opacity: 0;
-    }
-    50% {
-      opacity: 1;
-    }
-    100% {
-      transform: rotateY(720deg) rotateZ(-45deg) translate(-20px, 20px);
-      opacity: 0;
-    }
-  }
-}
-
-@mixin createButton($bottom, $right, $height, $width) {
-  height: $height;
-  width: $width;
-  overflow: hidden;
-  z-index: 152;
-  display: inline-block;
-  border: 1px solid #006dc3;
-  border-color: hsla(206, 100%, 38%, 1);
-  background-color: transparent;
-  cursor: pointer;
-  outline: none;
-}
-
-@mixin createInput($height, $width) {
-  @media screen and (min-width: 480px) {
-    height: $height;
-    width: $width;
-    overflow: hidden;
-    display: inline-block;
-    border: 1px solid #006dc3;
-    border-color: hsla(206, 100%, 38%, 1);
-    background-color: transparent;
-    outline: none;
-  }
-}
-
-@mixin addIconsToButton() {
-  [class*="entypo-"]:before {
-    font-family: 'entypo', sans-serif;
-  }
-
-  [class*="fontawesome-"]:before {
-    font-family: 'FontAwesome', sans-serif;
-  }
-}
-
-@mixin setButtonShares() {
-
-  #following-button:hover,
-  #share-button:hover,
-  #facebook-button:hover,
-  #facebook-button.active,
-  #twitter-button:hover,
-  #twitter-button.active,
-  #share-button-following:hover,
-  #twitter-button-following:hover,
-  #facebook-button-following:hover {
-    background-color: #006dc3;
-  }
-
-  .email-button-following:hover, .email-button-following:focus {
-    background-color: white;
-    opacity: 0.8;
-    color: black;
-  }
-
-  .email-button-following {
-    background-color: white;
-    text-align: center;
-  }
-
-  @include addIconsToButton();
-
-  #following-button {
-    @include createButton(5.5em, 2em, 3.125em, 3.125em);
-  }
-
-  #twitter-button {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    transition: all .2s ease-in-out;
-    @include createButton(2em, 2em, 3.125em, 3.125em);
-    color: white;
-  }
-
-  #twitter-button-following {
-    position: absolute;
-    right: 360px;
-    bottom: 0;
-    transition: all .2s ease-in-out;
-    @include createButton(2em, 2em, 3.125em, 3.125em);
-    color: white;
-  }
-
-  #share-button, #share-button-following {
-    @include createButton(2em, 2em, 3.125em, 3.125em);
-    .fa {
-      font-size: 1em;
-      color: white;
-    }
-  }
-
-  .email-button-following {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    @media screen and (min-width: 480px) {
-      @include createInput(3.125em, 300px);
-      background-color: white;
-      opacity: 0.5;
-      display: block;
-    }
-    display: none;
-  }
-
-  #facebook-button {
-    position: absolute;
-    right: 55px;
-    bottom: 0;
-    @include createButton(2em, 2em, 3.125em, 3.125em);
-    color: white;
-  }
-
-  #facebook-button-following {
-    position: absolute;
-    right: 305px;
-    bottom: 0;
-    transition: all .2s ease-in-out;
-    @include createButton(2em, 2em, 3.125em, 3.125em);
-    color: white;
-  }
-
-  .slide-twitter-push-following .buttons-wrapper-following {
-    .buttons-following {
-      right: 0;
-    }
-  }
-
-  .slide-twitter-push .buttons-wrapper {
-    .buttons {
-      right: 0;
-    }
-  }
-
-  .slide-facebook-push-following .buttons-wrapper-following {
-    .buttons-following {
-      right: -305px;
-    }
-
-    @media screen and (min-width: 480px) {
-      .buttons-following {
-        right: 0;
-      }
-    }
-  }
-
-  .slide-facebook-push .buttons-wrapper {
-    .buttons {
-      right: 2em;
-      bottom: 2em;
-    }
-  }
-  .slide-facebook-push-following #share-button-following {
-    display: none;
-  }
-
-  .buttons-wrapper {
-    position: absolute;
-    right: 2em;
-    bottom: 2em;
-    height: 50px;
-    width: 50px;
-    @media screen and (min-width: 480px) {
-      width: 300px;
-    }
-  }
-
-  .buttons-wrapper-following {
-    position: absolute;
-    right: 2em;
-    bottom: 5.5em;
-    height: 51px;
-    width: 37%;
-    overflow: hidden;
-    .buttons-following {
-      position: absolute;
-      height: 50px;
-      width: 500px;
-      @media screen and (min-width: 480px) {
-        right: -450px;
-      }
-      right: -450px;
-      transition: right 0.4s ease-in-out;
-    }
-  }
-}
-
-@mixin addBarSharing-following($height, $width) {
-  position: absolute;
-  height: $height;
-  width: $width;
-  background-color: white;
-  opacity: 0.9;
-  top: 50%;
-  margin-top: -1px;
-  right: 0;
-  margin-left: auto;
-}
-
-@mixin setBarTextFollowing() {
-  .text-bar-following {
-    position: absolute;
-    height: 100%;
-    right: 60px;
-    width: 210px;
-    bottom: 0;
-    visibility: hidden;
-    animation: show-sentence 2s;
-    .bar-follow-project-sentence-following {
-      @include addBarSharing-following(2px, 50px);
-    }
-    .follow-project-sentence-following {
-      color: #006dc3;
-      font-size: 150%;
-      line-height: 50px;
-      position: relative;
-      right: 60px;
-      text-align: right;
-      -webkit-text-stroke: 0.5px white;
-    }
-    @media screen and (min-width: 720px) {
-      visibility: visible;
-    }
-    @keyframes show-sentence {
-      0% {
-        opacity: 0;
-      }
-      100% {
-        opacity: 1;
-      }
-    }
-    .follow-project-sentence-following {
-      color: #006dc3;
-      line-height: 50px;
-      position: relative;
-    }
-  }
-}
-
-@mixin setTitlesHome {
-  .titles-neo {
-    @media screen and (min-width: 480px) {
-      text-align: center;
-      padding-top: 10rem;
-      font-size: 85px;
-      color: #006dc3;
-      -webkit-text-stroke: 2px white;
-    }
-    text-align: center;
-    padding-top: 10rem;
-    font-size: 7vh;
-    color:  #006dc3;
-    -webkit-text-stroke: 2px white;
-  }
-}
-
-@mixin setBarTextSharing() {
-  .test-sentence {
-    position: absolute;
-    height: 100%;
-    right: 110px;
-    bottom: 0;
-    width: 0px;
-    @media screen and (min-width: 480px) {
-      width: 150px;
-    }
-
-    .bar-follow-project-sentence {
-      @media screen and (min-width: 720px) {
-        position: absolute;
-        height: 2px;
-        width: 50px;
-        background-color: white;
-        opacity: 0.9;
-        top: 50%;
-        margin-top: -1px;
-        right: 0;
-        margin-left: auto;
-        visibility: visible;
-      }
-      visibility: visible;
-
-    }
-    .follow-project-sentence {
-      @media screen and (min-width: 720px){
-        position: relative;
-        width: 200px;
-        right: 100px;
-        line-height: 50px;
-        color: #006dc3;
-        font-size: 150%;
-        -webkit-text-stroke: 0.5px white;
-        visibility: visible;
-      }
-      visibility: hidden;
-    }
-  }
-}
+@import "colors";
 
 @mixin setSectionHome() {
+  #landing {
+  	text-align: center;
+  }
+  #landing,
+  #footer {
+  	position: relative;
+  	width: 100%;
+  	height: 60px;
+  	overflow: hidden;
+  	z-index: 1;
+  }
+  .landing-text,
+  .footer-text {
+  	position: relative;
+  	z-index: 2;
+  	color: #fff;
+  }
+  .landing-text {
+  	position: absolute;
+  	top: 50%;
+  	left: 0;
+  	text-align: center;
+  	display: block;
+  	width: 100%;
+  	height: 250px;
+  	margin-top: -125px;
+  	cursor: pointer;
+  }
+  .site-title {
+  	text-transform: uppercase;
+  	font-style: italic;
+  	font-size: 6em;
+  	line-height: 1em;
+  	text-shadow: 1px 1px 0px black;
+  }
+  .sub-site-title {
+  	text-transform: uppercase;
+  	font-size: 1em;
+  	text-shadow: 1px 1px 0px black;
+  	margin: 0 0 50px 0;
+  	line-height: 1.8em
+  }
+  .scrollbox,
+  .background {
+  	-webkit-transform: translate3d(0, 0, 0);
+  }
+  .background {
+  	position: absolute;
+  	overflow: hidden;
+  	background: #61AFC9;
+  	width: 100%;
+  	height: 100%;
+  	z-index: -1;
+  }
+  .dark-overlay {
+  	position: absolute;
+  	top: 0;
+  	left: 0;
+  	width: 100%;
+  	height: 100%;
+  	background: #000;
+  	opacity: .3;
+  	z-index: 1;
+  }
+  #footer .dark-overlay {
+  	opacity: .7;
+  }
+  h2 {
+  	font-size: 3em;
+  	font-weight: bold;
+  }
 
-  height: 100vh;
-  font-family: Delicious;
-  background-image: url('../images/family-image.png');
-  background-size: cover;
-  @include setButtonScrolling();
-  @include setTitlesHome();
-  @include setBarTextFollowing();
-  @include setBarTextSharing();
-  margin-bottom: 20px;
+  .button,
+  .social-selector a {
+  	font-size: .9em;
+  	background: #61AFC9;
+    opacity: .85;
+  	color: #fff;
+  	height: 3.7em;
+  	line-height: 3.7em;
+  	border-radius: 1px;
+  	padding: 0 2em 0 2em;
+  	display: inline-block;
+  	text-transform: uppercase;
+  	cursor: pointer;
+  	text-decoration: none;
+  	text-align: center;
+    border: 1px solid #bdbdbd;
+  }
+  .button.discover-button {
+  	display: inline-block;
+  	padding: 0 3.5em 0 3.5em;
+
+  }
+  .buttons {
+  	z-index: 2;
+  	position: absolute;
+  	bottom: 40px;
+  	left: 0px;
+  	width: 100%;
+  	text-align:center;
+  }
+  .button:hover,
+  .social-selector a:hover {
+  	background: rgba(255,255,255,.8);
+  	color: #61AFC9;
+  	outline: 1px solid #999;
+  }
+  header a {
+  	text-decoration: none;
+  }
+
+
+  .social-menu {
+  	position: absolute;
+  	bottom: 40px;
+  	right: 40px;
+  	z-index: 10000;
+  }
+
+  .social-selector {
+  	display: inline-block;
+  	margin: 0 0 0 1px;
+  }
+  .social-selector.selected a {
+  	text-decoration: underline;
+  }
+
+  @media (max-width: 950px) {
+  	.site-title {
+  		font-size: 3em;
+  	}
+  	.landing-text {
+  		margin-top: -50px;
+  	}
+  	.social-menu {
+  		top: 40px;
+  		left: 0px;
+  		width: 100%;
+  		text-align: center;
+  		bottom: auto;
+  		right: auto;
+  	}
+  	.button,
+  	.social-selector a {
+  		font-size: .8em;
+  	}
+  }
 }

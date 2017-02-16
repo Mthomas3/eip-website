@@ -1,15 +1,57 @@
+@import "colors.scss";
+
 @mixin setFooter(){
-  background-color: #2B2B2B;
-  .text-footer{
-    text-align: center;
-    color: white;
-    font-family: 'Open Sans', sans-serif;
+  #footer-container {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+  	top: 0;
+  	left: 0;
+  	width: 100%;
+  	height: 100%;
+    z-index: 2;
+    font-family: 'Roboto', sans-serif;
   }
-  .text-footer{
-    padding-top: 5px;
-    margin-bottom: 2px;
+
+  .footer-sub {
+    padding: 10px;
+  }
+
+  .footer-sub > h2 {
+    margin-bottom: 20px;
+    margin-top: 20px;
+    color: white;
+    font-size: 3em;
     text-align: center;
-    font-size: 2vh;
-    color: #adabab;
+  	text-shadow: 1px 1px 0px black;
+  }
+
+  .who-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .who-sub-container {
+    background-color: rgba(0, 0, 0, 0.51);
+    width: 800px;
+    padding: 15px;
+  }
+
+  .who-sub-container > p {
+    margin: auto;
+    text-align: justify;
+    font-size: 1.1em;
+    color: white;
+    font-weight: lighter;
+  }
+
+  @media (max-width: 950px) {
+      .footer-sub > h2 {
+        font-size: 1.5em;
+      }
+
+      .who-sub-container > p {
+        font-size: .9em;
+      }
   }
 }

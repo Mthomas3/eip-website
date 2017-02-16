@@ -1,93 +1,60 @@
-@import "utils";
+@import "colors.scss";
 
-.three-part-section
-{
-  @media (min-width: 992px) {
-    height: 350px;
-    display: table-cell;
+@mixin setContent() {
+  #entries {
+    display: flex;
+    flex-direction: column;
   }
-}
 
-.image_content{
-  @include resizeImage();
-}
+  .separator-container {
+    display: flex;
+    justify-content: center;
+  }
 
-.table
-{
-  display: table;
-}
+  .img-container {
+    display: flex;
+    justify-content: center;
+  }
 
-.content
-{
-  height: 1050px;
-}
+  .separator {
+    height:2px;
+    width: 300px;
+    background: $primary-color;
+  }
 
-.text-content
-{
-  @include whiteText();
-  background-color:#006dc3;
-  opacity: 0.8;
-}
+  .entry-row {
+    display: flex;
+    flex-direction: row;
+  }
 
-.vertical-middle
-{
-  @include verticalMiddle();
-}
+  .entry {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 300px;
+    padding: 25px;
+    font-family: 'Roboto', sans-serif;
+  }
 
-#fot{
-  background-image: url("../images/fot.png");
-}
-
-#sot{
-  background-image: url("../images/sot.jpeg");
-}
-
-#tot{
-  background-image: url("../images/tot.png");
-}
-
-.white-text-container
-{
-  @include whiteText();
-}
-
-@mixin setBar(){
-  color: black;
-  height: 2px;
-  width: 100%;
-}
-
-.addBar{
-  @include setBar();
-  margin-bottom: 40px;
-  background-color: black;
-  opacity: 0.2;
-}
-
-@mixin setTitlesContent(){
-  .titles-neo-content{
+  .entry > h2 {
+    font-weight: bolder;
+    font-size: 2em;
+    color: #484848;
     text-align: center;
-    margin-top: 10px;
   }
-}
-@mixin sizeImageContent(){
-  .image_content{
-    height: 350px;
-  }
-}
-@mixin setTextContent(){
-  .text-neo-content {
-    font-size: 2.2vh;
-    margin-top: 20px;
+
+  .entry > p {
+    font-weight: lighter;
+    font-size: 1em;
+    color: #484848;
+    margin-top: 15px;
     text-align: justify;
-    font-weight: normal;
   }
-}
 
-@mixin setContent(){
-  background-color: #FFFFFF;
-  @include sizeImageContent();
-  @include setTitlesContent();
-  @include setTextContent();
-
+  @media (max-width: 950px) {
+      .img-entry {
+        display: none;
+      }
+  }
 }

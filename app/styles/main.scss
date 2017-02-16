@@ -1,52 +1,111 @@
 @import 'home.scss';
 @import 'content.scss';
 @import 'footer.scss';
-@import 'about.scss';
-@import 'contact.scss';
+@import "colors.scss";
 
-//todo different supports, font-face need to be fixed!
-@font-face { font-family: Delicious; src: url('font/BalooThambi-Regular.ttf') format("truetype"); }
+/* first for IE 4–8 */
+@font-face {
+  font-family: DINWebPro;
+  src: url("../fonts/DINWeb.eot");
+  font-weight: normal;
+}
+
+/* then for WOFF-capable browsers */
+@font-face {
+  font-family: DINWebPro;
+  src: url("../fonts/DINWeb.woff") format("woff");
+  font-weight: normal;
+}
+
+/* first for IE 4–8 */
+@font-face {
+  font-family: DINWebPro;
+  src: url("../fonts/DINWeb-Bold.eot");
+  font-weight: bold;
+}
+
+/* then for WOFF-capable browsers */
+@font-face {
+  font-family: DINWebPro;
+  src: url("../fonts/DINWeb-Bold.woff") format("woff");
+  font-weight: bold;
+}
+
+
+/* first for IE 4–8 */
+@font-face {
+  font-family: DINWebProItalic;
+  src: url("../fonts/DINWeb-Ita.eot");
+  font-weight: normal;
+}
+
+/* then for WOFF-capable browsers */
+@font-face {
+  font-family: DINWebProItalic;
+  src: url("../fonts/DINWeb-Ita.woff") format("woff");
+  font-weight: normal;
+}
+
+
+/* first for IE 4–8 */
+@font-face {
+  font-family: DINWebProBoldItalic;
+  src: url("../fonts/DINWeb-BoldIta.eot");
+  font-weight: bold;
+}
+
+/* then for WOFF-capable browsers */
+@font-face {
+  font-family: DINWebProBoldItalic;
+  src: url("../fonts/DINWeb-BoldIta.woff") format("woff");
+  font-weight: bold;
+}
 
 /* icon */
 @import url(font/font-icons.css);
 @import url(font/font-icons-2.css);
 
-html {
-  height: 100%;
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: inherit;
+	color: inherit;
+	letter-spacing: inherit;
+	list-style: none;
+	-webkit-font-smoothing: subpixel-antialiased;
 }
-
-body{
-  height: 100%;
-  width:100%;
+a {
+  text-decoration: none;
 }
-
-section {
-  width: 100%;
+a:hover {
+	color: #000;
 }
-
-.home{
-  @include setSectionHome();
-}
-
-.about{
-  @include setAbout();
-}
-
-.contact{
-  @include setContact();
-}
-
-.footer{
-  @include setFooter();
-}
-
-.content{
-  @include setContent();
-}
-
-/* todo has to be fixed */
-@include setButtonShares();
-
 body {
-  background-color: white;
+	font-size: 16px;
+	position: relative;
+	letter-spacing: 0.05em;
+	font-family: DINWebPro, Times, "Times New Roman", serif;
 }
+p {
+	margin: 0 0 10px 0;
+	font-size: .9em;
+	line-height: 1.5em;
+	letter-spacing: 0.03em;
+	font-family: DINWebPro, Helvetica, Arial, serif;
+}
+p a {
+	font-weight: bold;
+	text-decoration: none;
+}
+p a:hover {
+	text-decoration: underline;
+}
+.neo {
+  color: $primary-color;
+}
+
+@include setSectionHome();
+@include setContent();
+@include setFooter();

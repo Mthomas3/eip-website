@@ -1,19 +1,18 @@
 const gulp = require('gulp')
 const browserSync = require('browser-sync').create()
-const styles = require('gulp-sass')
-const images = require('gulp-imagemin')
-const clean = require('gulp-clean')
 const plumber = require('gulp-plumber')
-const babel = require('gulp-babel')
-const copy = require('gulp-copy')
+const sass = require('gulp-sass')
+const clean = require('gulp-clean')
+const images = require('gulp-imagemin')
 
-gulp.task('copy-script', function () {
+gulp.task('js', function () {
 
-    return (gulp.src(['app/js/classie.js', 'app/js/handleTyped.js', 'app/js/typed.js', 'app/js/showButtonHome.js', 'app/js/modernizr.custom.js']).pipe(gulp.dest('dist/js/')))
+    return (gulp.src('app/js/**/*')
+      .pipe(gulp.dest('dist/js')))
 
 })
 
-gulp.task('copy', function () {
+gulp.task('html', function () {
     return (
         gulp.src('app/index.html').pipe(gulp.dest('dist/')))
 })
@@ -23,19 +22,9 @@ gulp.task('styles', function () {
     return (
         gulp.src('app/styles/*.scss')
             .pipe(plumber())
-            .pipe(styles())
+            .pipe(sass())
             .pipe(gulp.dest('dist/styles/'))
             .pipe(browserSync.stream()))
-})
-
-gulp.task('babel', function () {
-
-    gulp.src('app/js/main.js')
-        .pipe(plumber())
-        .pipe(babel({
-            presets: ['es2015']
-        }))
-        .pipe(gulp.dest('dist/js/'))
 })
 
 gulp.task('clean', function () {
@@ -52,8 +41,14 @@ gulp.task('images', function () {
         .pipe(gulp.dest('dist/images/'))
 })
 
+gulp.task('fonts', function () {
 
-gulp.task('serve', ['copy', 'copy-script', 'styles', 'clean', 'images', 'babel'], function () {
+    gulp.src('app/fonts/**/*')
+        .pipe(gulp.dest('dist/fonts/'))
+})
+
+
+gulp.task('serve', ['html', 'js', 'styles', 'clean', 'images', 'fonts'], function () {
 
 
     browserSync.init({
@@ -62,8 +57,6 @@ gulp.task('serve', ['copy', 'copy-script', 'styles', 'clean', 'images', 'babel']
     })
 
     gulp.watch('app/styles/*.scss', ['styles'])
-    gulp.watch('app/*.html', ['copy', browserSync.reload])
-    gulp.watch('app/*.js', ['copy-script'], browserSync.reload)
-    gulp.watch('app/js/*.js', ['babel', browserSync.reload])
+    gulp.watch('app/*.html', ['html', browserSync.reload])
+    gulp.watch('app/js/**/*', ['js', browserSync.reload])
 })
-

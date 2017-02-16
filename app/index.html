@@ -1,192 +1,141 @@
 <!DOCTYPE html>
-<html>
+
 <head>
-    <meta charset="utf-8"/>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css"
-          integrity="sha384-AysaV+vQoT3kOAXZkl02PThvDr8HYKPZhNT5h/CXfBThSRXQ6jW5DO2ekP5ViFdi" crossorigin="anonymous">
-    <script src="https://use.fontawesome.com/dd6a26fee5.js"></script>
-    <script src="js/main.js"></script>
-    <link rel="stylesheet" href="styles/main.css">
-    <title> Neo </title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="utf-8" />
+
+	<title>Neo - Restons proches</title>
+
+	<!-- Site Meta -->
+	<meta name="description" content="Neo est une borne pour senior a mettre dans son salon pour rester en contact permanent avec sa famille" />
+	<meta name="keywords" content="Neo Aide Personnes agées Seniors Famille Robot Compagnon" />
+	<meta name="author" content="Neo" />
+	<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<!-- /Site Meta -->
+
+	<!-- Open Graph Meta -->
+	<meta property="og:url" content="" />
+	<meta property="og:site_name" content="Neo" />
+	<meta property="og:title" content="Neo - Restons proches" />
+	<meta property="og:type" content="Projet" />
+	<meta property="og:description" content="Neo est une borne pour senior a mettre dans son salon pour rester en contact permanent avec sa famille" />
+	<!-- /Open Graph Meta -->
+
+	<link rel="icon" href="" type="image/png" />
+
+	<link rel='stylesheet' id='base-css'  href='styles/main.css' type='text/css' media='all' />
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 </head>
-<body>
-<section class="home">
-    <div class="container">
-        <h1 class="titles-neo"> Neo, vos proches chez vous</h1>
-        <div class="scroll-down">
-            <a href="#" class="scroll-down"><span></span></a>
-        </div>
-        <div class="buttons-wrapper">
-            <div class="test-sentence">
-                <div class="bar-follow-project-sentence"></div>
-                <p class="follow-project-sentence"> partager le projet</p>
-            </div>
-            <div class="buttons">
-                <a href="https://twitter.com/projetneo" target="_blank">
-                    <button id="twitter-button" type="button">
-                        <span class="fontawesome-twitter"></span>
-                    </button>
-                </a>
-                <a href="https://www.facebook.com/projetneo/?ref=aymt_homepage_panel" target="_blank">
-                    <button id="facebook-button" type="button">
-                        <span class="entypo-facebook"></span>
-                    </button>
-                </a>
-            </div>
-        </div>
-        <div class="buttons-wrapper-following">
-            <div class="text-bar-following">
-                <div class="bar-follow-project-sentence-following"></div>
-                <p class="follow-project-sentence-following"> suivre le projet</p>
-            </div>
-            <div class="buttons-following">
-                <div class="titles-button">
-                </div>
-                <button id="share-button-following" type="button">
-                    <i class="fa fa-share-alt" aria-hidden="true"></i>
-                </button>
-                <button id="twitter-button-following" type="button">
-                    <span class="fontawesome-twitter"></span>
-                </button>
-                <button id="facebook-button-following" type="button">
-                    <span class="entypo-facebook"></span>
-                </button>
-                <input type="text" name="email" value="enter email" class="email-button-following">
-            </div>
-        </div>
-    </div>
-</section>
-<section class="about">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-6">
-                <img class="resizeAboutPicture" src="images/robot-02.jpg" alt="">
-            </div>
-            <div class="col-md-6">
-                <div class="text-neo">
-                    <h2 class="titles-neo-content-about"> Qu'est-ce que Neo ? </h2>
-                    <div class="text-neo-content">
-                        <p>Neo est le premier hub connecté qui permet de relier vos parents et grands-parents au monde
-                            technologique !</p>
-                        <p>Grâce à de simple commandes vocale il enverra vos messages ou appels sur vos plateformes
-                            préférées que ce soit Facebook, Skype ou bien Hangouts. Neo saura s'adapté en toute
-                            transparence.</p>
-                        <p>
-                            Vous pouvez également appeler vos parents et il recevront l'appel sur leurs télévision.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<section class="content container-fluid">
-    <div class="row">
-        <div class="col-xs-12 col-md-6 three-part-section image_content" id="fot"></div>
-        <div class="col-xs-12 col-md-6 three-part-section text-content">
-            <div class="vertical-middle">
-                <div class="text-neo">
-                    <h2 class="titles-neo-content">Qu'est-ce que NEO peut faire ?</h2>
-                    <div class="text-neo-content">
-                        <p>
-                            NEO permet à vos parents de vous appeler ou de vous envoyer des messages très facilement à
-                            l'aide de la reconnaissance vocale.</p>
-                        <p>
-                            NEO lira également les messages lorsqu'il les recevras, que ce soit sur Facebook, Hangouts
-                            ou
-                            Skype !
-                        </p>
-                        <p>
-                            Pour répondre il suffira de le dire, la reconnaissance vocale s'occupera du reste.<br/>
-                            Grâce à NEO, vos parents pourrons rester en contact avec vous sur vos moyens de
-                            communication
-                            préférés.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-xs-12 col-md-6 push-md-6 three-part-section image_content" id="sot"></div>
-        <div class="col-xs-12 col-md-6 pull-md-6 three-part-section text-content">
-            <div class="text-neo">
-                <h2 class="titles-neo-content">La communication</h2>
-                <div class="text-neo-content">
-                    <p>
-                        Pour nous, la communication de NEO est très importante car c'est à travers elle que la personne
-                        va
-                        intéragir.</p>
 
-                    <p>Pour cela, NEO est équipé d'une reconnaissance vocale haut niveau qui s'améliorera au fil du
-                        temps
-                        afin de comprendre toutes les nuances de la langue afin de rendre la conversation la plus
-                        naturelle
-                        possible.</p>
 
-                    <p>Mais pour nous la compréhension ne suffit pas, NEO saure répondre grâce à une synthèse vocale lui
-                        permettant de s'exprimer ou bien de vous notifier d'un message et de vous le lire.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-xs-12 col-md-6 three-part-section image_content" id="tot"></div>
-        <div class="col-xs-12 col-md-6 three-part-section text-content">
-            <div class="text-neo">
-                <h2 class="titles-neo-content">La surveillance médicale</h2>
-                <div class="text-neo-content">
-                    <p>
-                        NEO ne vas pas seulement rapprocher vos parents par rapport à la communication, NEO va également
-                        se
-                        connecté aux appareils de santé qu'ils possèdent que ce soit un pilulier connecté, ou bien un
-                        détecteur de chute, NEO pourra vous contacter en cas de problème!</p>
+<body class="home blog">
+		<header id="landing">
+				<div class="dark-overlay"><br /></div>
+				<div class="background">
+					<a class='src rsImg' href='images/family-image.jpg'></a>
+					<a class='rsImg' href='images/family-image.png'></a>
+				</div>
+				<div class="landing-text">
+		      <h1 class="site-title">"Neo, votre famille chez vous"</h1>
+		      <div class='sub-site-title'>Projet NEO - Restons Proches</div>
+		    </div>
 
-                    <p>NEO vous signalera sur vos parents ne prennent pas de médicaments tout en leurs rappelant de les
-                        prendres, mais également si ils ne mangent plus ou moins à l'aide de fourchettes connectés.</p>
-                    <p>
+				<div class="buttons">
+						<div class="button discover-button">Découvrir</div>
+				</div>
+				<ul class='social-menu'>
+					<li class='social-selector facebook-button'>
+						<a>Facebook</a>
+					</li>
+					<li class='social-selector twitter-button'>
+						<a>Twitter</a>
+					</li>
+				</ul>
+		</header>
 
-                        NEO permettra de vous assurez que vos parents aillent bien !
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<div class="addBar"></div>
-<section class="contact">
-    <div class="container">
-        <div class="contact">
-            <div class="col-md-4">
-                <h2>Quand?</h2>
-                <p>Le projet a été conçu et démarré en fin d'année 2016, son développement va durer un peu plus de deux
-                    ans afin d'avoir un produit fonctionnel dès 2019.</p>
-            </div>
-            <div class="col-md-4">
-                <h2>Nos Objectifs</h2>
-                <p>Fournir un produit fiable et simple d'utilisation afin de briser la barrière technologique qui peut
-                    être présente chez certaines personnes âgées.</p>
-            </div>
-            <div class="col-md-4">
-                <h2>Pourquoi?</h2>
-                <p>Nous sommes un groupe de 9 étudiants ayant comme objectifs de rapprocher vos parents en les amenant
-                    dans le monde numérique en toute transparence.</p>
-            </div>
-        </div>
-    </div>
-</section>
-<section class="footer">
-    <div class="container">
-        <p class="text-footer">©2017 NEO - RESTEZ PROCHE DE VOTRE FAMILLE </p>
-    </div>
-</section>
-<script src="js/modernizr.custom.js"></script>
-<!-- BOOTSTRAP -->
-<script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/js/bootstrap.min.js"
-        integrity="sha384-BLiI7JTZm+JWlgKa0M0kGRpJbF2J8q+qreVrKBC47e3K6BW78kGLrCkeRX6I9RoK"
-        crossorigin="anonymous"></script>
+
+	<section id="entries">
+		<div class="entry-row">
+			<div class="entry img-entry">
+				<div class="img-container">
+					<img src="images/quest.png" style="width:190px;height:190px;"/>
+				</div>
+			</div>
+			<div class="entry">
+				<h2>Qu'est-ce que <span class="neo">Neo</span> ?</h2>
+				<p><span class="neo">Neo</span> est une petite tour connectée, permettant à vos parents ou grand-parents de renouer avec le monde numérique et de communiquer avec vous en toute simplicité.<p>
+			</div>
+		</div>
+		<div class="separator-container">
+			<div class="separator"></div>
+		</div>
+		<div class="entry-row">
+			<div class="entry">
+				<h2>Comment utiliser <span class="neo">Neo</span> ?</h2>
+				<p>Votre proche veut vous appeller ou vous envoyer un message ? Plus besoin de prendre en main un smartphone ou bien de s'inscrire sur tous les réseaux sociaux qu'utilise votre famille : grâce à sa reconaissance vocale, dites le simplement, et <span class="neo">Neo</span> s'occupe du reste ! La communication se fait directement via votre réseau social favori. Vous répondez, et <span class="neo">Neo</span> s'occupe de transférer le tout sur la TV de votre proche.</p>
+			</div>
+			<div class="entry img-entry">
+					<div class="img-container">
+						<img src="images/elder.png" style="width:270px;height:270px;"/>
+					</div>
+			</div>
+		</div>
+		<div class="separator-container">
+			<div class="separator"></div>
+		</div>
+		<div class="entry-row">
+			<div class="entry img-entry">
+					<div class="img-container">
+						<img src="images/robot.png" style="width:210px;height:210px;"/>
+					</div>
+			</div>
+			<div class="entry">
+				<h2>Communiquez</h2>
+				<p><span class="neo">Neo</span> brise tous les codes modernes de communication et efface le décalage générationnel en se concentrant sur l'essentiel : la conversation orale. Pour cela, <span class="neo">Neo</span> est équipé d'une reconnaissance vocale haut niveau qui s'améliorera au fil du temps afin de vous correspondre au mieux et rendre la conversation la plus naturelle possible. Mais pour nous la compréhension ne suffit pas, <span class="neo">Neo</span> saura répondre grâce à une synthèse vocale lui permettant de s'exprimer et de tenir une conversation.</p>
+			</div>
+		</div>
+		<div class="separator-container">
+			<div class="separator"></div>
+		</div>
+		<div class="entry-row">
+			<div class="entry">
+				<h2>Veillez sur vos proches</h2>
+				<p><span class="neo">Neo</span> ne permet pas seulement de parler à votre parent, mais aussi de veiller sur lui à distance : en se connactant à des objets tels que des piluliers et fourchettes connectés, ou bien des détecteurs de chute, <span class="neo">Neo</span> vous préviendra en cas de problème !</p>
+			</div>
+			<div class="entry img-entry">
+					<div class="img-container">
+						<img src="images/heart.png" style="width:210px;height:210px;"/>
+					</div>
+			</div>
+		</div>
+	</section>
+
+	<div id="footer">
+		<div id="footer-container">
+			<div class="footer-sub">
+				<h2>Qui sommes-nous ?</h2>
+				<div class="who-container">
+					<div class="who-sub-container">
+						<p><span class="neo">Nous sommes un groupe de 9 étudiants</span> ayant comme objectifs de rapprocher les familles en brisant la barrière des codes générationnels du numérique et ainsi permettre à leurs membres de communiquer simplement.</p>
+						<p><span class="neo">Notre objectif</span> est de fournir un produit fiable et simple d'utilisation afin de briser la barrière technologique qui peut être présente chez certaines personnes âgées.</p>
+						<p><span class="neo">Le projet</span> a été conçu et démarré en fin d'année 2016, son développement va durer un peu plus de deux ans afin d'avoir un produit fonctionnel dès 2019.</p>
+					</div>
+				</div>
+			</div>
+			<div class="footer-sub">
+				<h2>Nous contacter</h2>
+				<div class="contact">
+
+				</div>
+			</div>
+		</div>
+		<div class="dark-overlay"><br /></div>
+		<div class="background">
+			<a class='rsImg' href='images/EIP.JPG'></a>
+		</div>
+	</div>
+<script type='text/javascript' src='js/royalslider/jquery.royalslider.min-ver=3.8.18.js'></script>
+<script type='text/javascript' src='js/modernizr-2.6.2-ver=3.8.18.js'></script>
+<script type='text/javascript' src='js/main.js'></script>
 </body>
 </html>
